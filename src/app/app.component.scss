@@ -1,0 +1,6 @@
+// Fix veera arrow not being vertically in the center of the input
+.c-dropdown {
+  &:after {
+    top: 12px;
+  }
+}

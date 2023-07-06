@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {RiaComponentLibraryModule} from "ria-components-angular";
+import * as EasyMDE from 'easymde';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RiaComponentLibraryModule,
+    EasyMDE
   ],
   providers: [],
   bootstrap: [AppComponent]
