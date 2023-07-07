@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {RiaComponentLibraryModule} from "ria-components-angular";
-import * as EasyMDE from 'easymde';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {UiModule} from '@egov/cvi-ng';
+import {HttpClientModule} from "@angular/common/http";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -12,11 +14,14 @@ import * as EasyMDE from 'easymde';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    RiaComponentLibraryModule,
-    EasyMDE
+    UiModule,
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

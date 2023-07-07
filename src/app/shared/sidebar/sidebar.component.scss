@@ -1,0 +1,29 @@
+.sidebar-ending {
+  width: 200px;
+  height: 100vh;
+  background-color: var(--cvi-color-sapphire-blue-10);
+}
+
+#sidebar {
+  min-width: 200px;
+  max-width: 200px;
+}
+
+#sidebar ul li a {
+  height: 106px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+
+  img {
+    width: 100%;
+    max-width: 28px;
+    height: auto;
+  }
+
+  p {
+    padding-left: 0;
+  }
+}
+
