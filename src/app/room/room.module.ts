@@ -16,4 +16,5 @@ const routes: Routes = [
   declarations: [RoomComponent],
   imports: [RouterModule.forChild(routes), UiModule, CommonModule, SharedModule]
 })
-export class RoomModule { }
+export class RoomModule {
+}

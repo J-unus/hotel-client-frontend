@@ -1,7 +1,22 @@
-<div class="p-5">
-  <cvi-ng-form-item>
-    <cvi-ng-datepicker></cvi-ng-datepicker>
-  </cvi-ng-form-item>
+<h2>Broneeri tuba meie hotellis</h2>
 
-  <cvi-ng-button>Otsi</cvi-ng-button>
+<div class="d-flex align-items-start">
+  <div class="flex-grow-1 pe-3">
+    <app-datepicker></app-datepicker>
+  </div>
+  <div class="flex-grow-1 pe-3">
+    <app-select [multiSelect]="true"></app-select>
+  </div>
+  <div class="flex-grow-1 pe-3">
+    <app-select [multiSelect]="true"></app-select>
+  </div>
+  <div class="pt-2">
+    <button class="c-btn c-btn--primary">Otsi</button>
+  </div>
+</div>
+
+<div class="row row-gap-3">
+  <div class="col-xl-6 col-sm-12">
+    <app-card></app-card>
+  </div>
 </div>

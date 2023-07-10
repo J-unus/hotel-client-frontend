@@ -1,29 +1,89 @@
 .sidebar-ending {
-  width: 200px;
+  width: 144px;
   height: 100vh;
-  background-color: var(--cvi-color-sapphire-blue-10);
+  background-color: var(--color-sapphire-blue-10);
 }
 
-#sidebar {
-  min-width: 200px;
-  max-width: 200px;
-}
+.c-sidenav {
+  &--small {
+    img {
+      height: 14px;
+      min-width: 14px;
+      opacity: 0.5;
+    }
 
-#sidebar ul li a {
-  height: 106px;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0;
+    #sidebar {
+      min-width: 144px;
+      max-width: 144px;
+      li {
+        min-width: 144px;
+        max-width: 144px;
+      }
+    }
+    #sidebar.active {
+      min-width: 57px;
+      max-width: 57px;
+      text-align: center;
+      li {
+        min-width: 57px;
+        max-width: 57px;
+        a p {
+          display: none;
+        }
+      }
+    }
 
-  img {
-    width: 100%;
-    max-width: 28px;
-    height: auto;
+    #sidebar ul li a {
+      height: 106px;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+
+      img {
+        width: 100%;
+        max-width: 28px;
+        height: auto;
+      }
+
+      p {
+        padding-left: 0;
+      }
+    }
+
+    #sidebar.active a {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    #sidebar ul ul {
+      position: absolute;
+
+      left: 144px;
+      margin-top: -25px;
+    }
+
+    #sidebar ul ul ul {
+      position: absolute;
+
+      left: 144px;
+      margin-top: -25px;
+    }
+    //changes between close and open text in nav header
+    #sidebar .sidenav-header img {
+      opacity: 1;
+      &:first-child {
+        display: none;
+      }
+    }
+    #sidebar.active .sidenav-header {
+      img:first-child {
+        display: block;
+      }
+      img {
+        display: none;
+      }
+    }
   }
-
-  p {
-    padding-left: 0;
-  }
 }
-
