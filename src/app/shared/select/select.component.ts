@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {FormControl} from "@angular/forms";
+import {Classifier} from "../classifier/classifier";
 
 @Component({
   selector: 'app-select',
@@ -8,7 +8,8 @@ import {FormControl} from "@angular/forms";
 })
 export class SelectComponent {
   @Input() multiSelect = false;
-  toppings = new FormControl('');
-  toppingList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  @Input() placeholder = '';
+  @Input() selected: any[] = [];
+  @Input() options: Classifier[] = [];
 }
 

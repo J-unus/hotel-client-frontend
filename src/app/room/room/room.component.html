@@ -2,13 +2,28 @@
 
 <div class="d-flex align-items-start">
   <div class="flex-grow-1 pe-3">
-    <app-datepicker></app-datepicker>
+    <app-datepicker
+      [startDate]="roomFilterDto.startDate"
+      [endDate]="roomFilterDto.endDate"
+      [startPlaceholder]="'Saabumise kuupäev'"
+      [endPlaceholder]="'Lahkumise kuupäev'"
+    ></app-datepicker>
   </div>
   <div class="flex-grow-1 pe-3">
-    <app-select [multiSelect]="true"></app-select>
+    <app-select
+      [selected]="roomFilterDto.roomAmount"
+      [options]="roomAmountClassifier"
+      [multiSelect]="true"
+      [placeholder]="'Toa suurus'"
+    ></app-select>
   </div>
   <div class="flex-grow-1 pe-3">
-    <app-select [multiSelect]="true"></app-select>
+    <app-select
+      [selected]="roomFilterDto.priceRange"
+      [options]="priceRangeClassifier"
+      [multiSelect]="true"
+      [placeholder]="'Hinnavahemik'"
+    ></app-select>
   </div>
   <div class="pt-2">
     <button class="c-btn c-btn--primary">Otsi</button>

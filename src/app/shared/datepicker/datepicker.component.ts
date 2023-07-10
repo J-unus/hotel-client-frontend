@@ -1,5 +1,10 @@
-import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy} from "@angular/core";
-import {FormControl, FormGroup} from "@angular/forms";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Inject, Input,
+  OnDestroy,
+} from "@angular/core";
 import {MatCalendar} from "@angular/material/datepicker";
 import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from "@angular/material/core";
 import {Subject, takeUntil} from "rxjs";
@@ -12,11 +17,12 @@ import {MatButtonModule} from "@angular/material/button";
   styleUrls: ['./datepicker.component.scss'],
 })
 export class DatepickerComponent {
+  @Input() startDate = '';
+  @Input() endDate = '';
+  @Input() startPlaceholder = '';
+  @Input() endPlaceholder = '';
+
   datePickerHeader = DatePickerHeader;
-  range = new FormGroup({
-    start: new FormControl<Date | null>(null),
-    end: new FormControl<Date | null>(null),
-  });
 }
 
 @Component({

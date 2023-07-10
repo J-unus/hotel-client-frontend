@@ -1,9 +1,9 @@
 <mat-form-field class="w-100">
-  <mat-select *ngIf="!multiSelect" [formControl]="toppings" placeholder="Simple placeholder">
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+  <mat-select *ngIf="!multiSelect" [(ngModel)]="selected" [placeholder]="placeholder">
+    <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
   </mat-select>
 
-  <mat-select *ngIf="multiSelect" [formControl]="toppings" multiple placeholder="Simple placeholder">
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+  <mat-select *ngIf="multiSelect" [(ngModel)]="selected" multiple [placeholder]="placeholder">
+    <mat-option *ngFor="let option of options" [value]="option.value">{{option.label}}</mat-option>
   </mat-select>
 </mat-form-field>
