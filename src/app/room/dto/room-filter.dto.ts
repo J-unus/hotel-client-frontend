@@ -1,6 +1,6 @@
 export class RoomFilterDto {
-  startDate: string = '';
-  endDate: string = '';
-  roomAmount: number[] = [];
-  priceRange: any[] = []
+  public startDate: string = '';
+  public endDate: string = '';
+  public roomAmounts: number[] = [];
+  public priceRanges: any[] = []
 }

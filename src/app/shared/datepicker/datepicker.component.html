@@ -1,7 +1,17 @@
 <mat-form-field class="w-100">
-  <mat-date-range-input [rangePicker]="picker">
-    <input matStartDate [(ngModel)]="startDate" [placeholder]="startPlaceholder">
-    <input matEndDate [(ngModel)]="endDate" [placeholder]="endPlaceholder">
+  <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+    <input
+      matStartDate
+      [formControlName]="startControlName"
+      (dateInput)="onDateChange()"
+      [placeholder]="startPlaceholder"
+    >
+    <input
+      matEndDate
+      [formControlName]="endControlName"
+      (dateInput)="onDateChange()"
+      [placeholder]="endPlaceholder"
+    >
   </mat-date-range-input>
   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-date-range-picker #picker [calendarHeaderComponent]="datePickerHeader"></mat-date-range-picker>

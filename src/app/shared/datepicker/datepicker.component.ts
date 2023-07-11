@@ -2,7 +2,8 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  Inject, Input,
+  Inject,
+  Input,
   OnDestroy,
 } from "@angular/core";
 import {MatCalendar} from "@angular/material/datepicker";
@@ -10,6 +11,9 @@ import {DateAdapter, MAT_DATE_FORMATS, MatDateFormats} from "@angular/material/c
 import {Subject, takeUntil} from "rxjs";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import {FormGroup} from "@angular/forms";
+import * as moment from "moment";
+import {BACKEND_DATE_FORMAT} from "../util/constant";
 
 @Component({
   selector: 'app-datepicker',
@@ -17,12 +21,17 @@ import {MatButtonModule} from "@angular/material/button";
   styleUrls: ['./datepicker.component.scss'],
 })
 export class DatepickerComponent {
-  @Input() startDate = '';
-  @Input() endDate = '';
-  @Input() startPlaceholder = '';
-  @Input() endPlaceholder = '';
-
+  @Input() form: FormGroup;
+  @Input() startControlName: string;
+  @Input() endControlName: string;
+  @Input() startPlaceholder: string;
+  @Input() endPlaceholder: string;
   datePickerHeader = DatePickerHeader;
+
+  onDateChange(): void {
+    this.form.controls[this.startControlName].setValue(moment(this.form.controls[this.startControlName].value).format(BACKEND_DATE_FORMAT));
+    this.form.controls[this.endControlName].setValue(moment(this.form.controls[this.endControlName].value).format(BACKEND_DATE_FORMAT));
+  }
 }
 
 @Component({

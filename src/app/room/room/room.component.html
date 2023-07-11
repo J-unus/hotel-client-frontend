@@ -3,15 +3,16 @@
 <div class="d-flex align-items-start">
   <div class="flex-grow-1 pe-3">
     <app-datepicker
-      [startDate]="roomFilterDto.startDate"
-      [endDate]="roomFilterDto.endDate"
+      [startControlName]="'startDate'"
+      [endControlName]="'endDate'"
+      [form]="roomFilterForm"
       [startPlaceholder]="'Saabumise kuupäev'"
       [endPlaceholder]="'Lahkumise kuupäev'"
     ></app-datepicker>
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
-      [selected]="roomFilterDto.roomAmount"
+      [selected]="roomFilterDto.roomAmounts"
       [options]="roomAmountClassifier"
       [multiSelect]="true"
       [placeholder]="'Toa suurus'"
@@ -19,14 +20,14 @@
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
-      [selected]="roomFilterDto.priceRange"
+      [selected]="roomFilterDto.priceRanges"
       [options]="priceRangeClassifier"
       [multiSelect]="true"
       [placeholder]="'Hinnavahemik'"
     ></app-select>
   </div>
   <div class="pt-2">
-    <button class="c-btn c-btn--primary">Otsi</button>
+    <button class="c-btn c-btn--primary" (click)="search()">Otsi</button>
   </div>
 </div>
 
