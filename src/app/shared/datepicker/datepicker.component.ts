@@ -13,7 +13,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {FormGroup} from "@angular/forms";
 import * as moment from "moment";
-import {BACKEND_DATE_FORMAT} from "../util/constant";
+import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
 
 @Component({
   selector: 'app-datepicker',

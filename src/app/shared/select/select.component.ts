@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {Classifier} from "../classifier/classifier";
+import {Classifier} from "../../core/classifier/classifier";
 
 @Component({
   selector: 'app-select',

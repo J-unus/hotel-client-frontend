@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {RoomDto} from "../../dto/room.dto";
 import {BookingDto} from "../../dto/booking-dto";
-import {facility} from "../../../shared/classifier/classifier";
-import {getDaysDiff} from "../../../shared/util/date-util";
-import {DISPLAY_DATE_FORMAT} from "../../../shared/util/constant";
+import {facility} from "../../../core/classifier/classifier";
+import {getDaysDiff} from "../../../core/util/date-util";
+import {DISPLAY_DATE_FORMAT} from "../../../core/util/constant";
 
 @Component({
   selector: 'app-card',

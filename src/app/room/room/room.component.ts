@@ -1,10 +1,10 @@
 import {Component, OnInit} from "@angular/core";
 import {BookingDto} from "../dto/booking-dto";
-import {priceRange, roomAmount} from "../../shared/classifier/classifier";
+import {priceRange, roomAmount} from "../../core/classifier/classifier";
 import {RoomService} from "../service/room.service";
 import {RoomDto} from "../dto/room.dto";
 import {HttpResponse} from "@angular/common/http";
-import {ASCENDING, DESCENDING} from "../../shared/util/constant";
+import {ASCENDING, DESCENDING} from "../../core/util/constant";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import * as moment from "moment";
 

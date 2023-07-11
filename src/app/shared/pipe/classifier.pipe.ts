@@ -1,6 +1,6 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {getClassifierLabel} from "../classifier/classifier-util";
-import {Classifier} from "../classifier/classifier";
+import {getClassifierLabel} from "../../core/classifier/classifier-util";
+import {Classifier} from "../../core/classifier/classifier";
 
 @Pipe({
 	name: 'classifier',
