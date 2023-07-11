@@ -1,4 +1,4 @@
-<h2>Broneeri tuba meie hotellis</h2>
+<h2>{{'room.book' | translate}}</h2>
 
 <div class="d-flex align-items-start">
   <div class="flex-grow-1 pe-3">
@@ -6,26 +6,26 @@
       [startControlName]="'startDate'"
       [endControlName]="'endDate'"
       [form]="roomFilterForm"
-      [startPlaceholder]="'Saabumise kuupäev'"
-      [endPlaceholder]="'Lahkumise kuupäev'"
+      [startPlaceholder]="'room.date.start' | translate"
+      [endPlaceholder]="'room.date.end' | translate"
     ></app-datepicker>
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
       [options]="roomAmountClassifier"
       [multiSelect]="true"
-      [placeholder]="'Toa suurus'"
+      [placeholder]="'room.bedAmount' | translate"
     ></app-select>
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
       [options]="priceRangeClassifier"
       [multiSelect]="true"
-      [placeholder]="'Hinnavahemik'"
+      [placeholder]="'room.priceRange' | translate"
     ></app-select>
   </div>
   <div class="pt-2">
-    <button class="c-btn c-btn--primary" (click)="search()">Otsi</button>
+    <button class="c-btn c-btn--primary" (click)="search()">{{'button.search' | translate}}</button>
   </div>
 </div>
 

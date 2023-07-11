@@ -6,6 +6,7 @@ import {CommonModule} from "@angular/common";
 import {SharedModule} from "../shared/shared.module";
 import {RoomCardComponent} from "./room/room-card/room-card.component";
 import {MatCardModule} from "@angular/material/card";
+import {TranslateModule} from "@ngx-translate/core";
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [RoomComponent, RoomCardComponent],
-  imports: [RouterModule.forChild(routes), UiModule, CommonModule, SharedModule, MatCardModule]
+    imports: [RouterModule.forChild(routes), UiModule, CommonModule, SharedModule, MatCardModule, TranslateModule]
 })
 export class RoomModule {
 }

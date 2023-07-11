@@ -1,0 +1,27 @@
+{
+  "button": {
+    "search": "Otsi",
+    "chooseRoom": "Vali tuba"
+  },
+  "room":{
+    "book": "Broneeri tuba meie hotellis",
+    "bedAmount": "Toa suurus",
+    "priceRange": "Hinnavahemik",
+    "date": {
+      "start": "Saabumise kuupäev",
+      "end": "Lahkumise kuupäev"
+    },
+    "card": {
+      "bedAmount": "{{number}}-kohaline tuba",
+      "size": "Pindala: {{number}}m2",
+      "nights": "({{number}} ööd)",
+      "total": "Kokku",
+      "picAlt": "Hotelli toa pilt"
+    }
+  },
+  "sidebar": {
+    "home": "Avaleht",
+    "bookings": "Broneeringud",
+    "account": "Konto"
+  }
+}

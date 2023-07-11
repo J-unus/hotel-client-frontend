@@ -12,6 +12,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatInputModule} from "@angular/material/input";
 import {ClassifierPipe} from "./pipe/classifier.pipe";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -21,19 +22,20 @@ import {ClassifierPipe} from "./pipe/classifier.pipe";
     SelectComponent,
     ClassifierPipe,
   ],
-  imports: [
-    UiModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    MatSelectModule,
-    MatSliderModule,
-    MatInputModule,
-  ],
+    imports: [
+        UiModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        MatSelectModule,
+        MatSliderModule,
+        MatInputModule,
+        TranslateModule,
+    ],
   exports: [
     HeaderComponent,
     SidebarComponent,
