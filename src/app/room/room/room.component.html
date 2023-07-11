@@ -12,7 +12,6 @@
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
-      [selected]="roomFilterDto.roomAmounts"
       [options]="roomAmountClassifier"
       [multiSelect]="true"
       [placeholder]="'Toa suurus'"
@@ -20,7 +19,6 @@
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
-      [selected]="roomFilterDto.priceRanges"
       [options]="priceRangeClassifier"
       [multiSelect]="true"
       [placeholder]="'Hinnavahemik'"
@@ -32,7 +30,7 @@
 </div>
 
 <div class="row row-gap-3">
-  <div class="col-xl-6 col-sm-12">
-    <app-card></app-card>
+  <div *ngFor="let room of rooms" class="col-xl-6 col-sm-12">
+    <app-card [room]="room" [booking]="bookingDto"></app-card>
   </div>
 </div>

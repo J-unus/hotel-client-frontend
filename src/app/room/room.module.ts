@@ -4,6 +4,8 @@ import {RoomComponent} from "./room/room.component";
 import {UiModule} from "@egov/cvi-ng";
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "../shared/shared.module";
+import {RoomCardComponent} from "./room/room-card/room-card.component";
+import {MatCardModule} from "@angular/material/card";
 
 const routes: Routes = [
   {
@@ -13,8 +15,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RoomComponent],
-  imports: [RouterModule.forChild(routes), UiModule, CommonModule, SharedModule]
+  declarations: [RoomComponent, RoomCardComponent],
+  imports: [RouterModule.forChild(routes), UiModule, CommonModule, SharedModule, MatCardModule]
 })
 export class RoomModule {
 }

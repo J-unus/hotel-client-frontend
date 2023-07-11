@@ -7,30 +7,26 @@
   </div>
   <mat-card-content class="d-grid row-gap-3">
     <div>
-      <h3>2-kohaline tuba</h3>
-      <h4>Pindala: 15m2</h4>
+      <h3>{{room.roomAmount + '-kohaline tuba'}}</h3>
+      <h4>{{'Pindala: ' + room.size + 'm2'}}</h4>
     </div>
-    <div class="d-flex flex-wrap gap-1">
-      <div class="card-chip">Vann</div>
-      <div class="card-chip">WiFi</div>
-      <div class="card-chip">Telefon</div>
-      <div class="card-chip">Televiisor</div>
-      <div class="card-chip">Konditsioneer</div>
-      <div class="card-chip">Vann</div>
-      <div class="card-chip">WiFi</div>
-      <div class="card-chip">Telefon</div>
-      <div class="card-chip">Televiisor</div>
-      <div class="card-chip">Konditsioneer</div>
+    <div class="min-height-75">
+      <div class="d-flex flex-wrap gap-1">
+        <div *ngFor="let facility of room.roomFacilities"
+             class="card-chip">
+          {{facility | classifier: facilityClassifier}}
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="d-flex justify-content-start">
-          <span>01.06.2023 - 10.06.2023(9 ööd)</span>
+          <span>{{getBookingTimeString()}}</span>
         </div>
       </div>
       <div class="col">
         <div class="d-flex justify-content-end">
-          <span class="fw-bold">Kokku: € 600</span>
+          <span class="fw-bold">{{'Kokku: € ' + getCalculatedPrice()}}</span>
         </div>
       </div>
     </div>

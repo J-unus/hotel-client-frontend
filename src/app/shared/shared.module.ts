@@ -11,8 +11,7 @@ import {SelectComponent} from "./select/select.component";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSliderModule} from "@angular/material/slider";
 import {MatInputModule} from "@angular/material/input";
-import {MatCardModule} from "@angular/material/card";
-import {CardComponent} from "./card/card.component";
+import {ClassifierPipe} from "./pipe/classifier.pipe";
 
 @NgModule({
   declarations: [
@@ -20,7 +19,7 @@ import {CardComponent} from "./card/card.component";
     SidebarComponent,
     DatepickerComponent,
     SelectComponent,
-    CardComponent,
+    ClassifierPipe,
   ],
   imports: [
     UiModule,
@@ -34,14 +33,13 @@ import {CardComponent} from "./card/card.component";
     MatSelectModule,
     MatSliderModule,
     MatInputModule,
-    MatCardModule,
   ],
   exports: [
     HeaderComponent,
     SidebarComponent,
     DatepickerComponent,
     SelectComponent,
-    CardComponent,
+    ClassifierPipe,
   ]
 })
 export class SharedModule {
