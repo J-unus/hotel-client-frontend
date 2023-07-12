@@ -1,0 +1,111 @@
+<button class="c-btn c-btn--text">
+  <img
+    class="small-arrow-left"
+    src="assets/Icons/arrow_down.svg"
+    alt="Konto ikoon"
+  />
+  {{'button.back' | translate}}
+</button>
+<ng-container *ngIf="room">
+  <h2>{{'room.details.bedAmount' | translate:{number: room.roomAmount} }}</h2>
+  <h6>{{'room.details.size' | translate:{number: room.size} }}</h6>
+  <br>
+
+  <div class="row">
+    <div class="col">
+      <div class="image-container">
+        <img
+          src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+          [alt]="'room.details.picAlt' | translate"
+          class="zoom-image">
+      </div>
+    </div>
+    <div class="col">
+      <div class="row row-gap-3">
+        <div *ngFor="let _ of [].constructor(4)" class="col-6">
+          <div class="image-container--small">
+            <img
+              src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+              [alt]="'room.details.picAlt' | translate"
+              class="zoom-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-3">
+    <div class="d-flex flex-wrap gap-3">
+      <div *ngFor="let facility of room.roomFacilities"
+           class="facility-chip">
+        {{facility | classifier: facilityClassifier}}
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="pt-3">
+    <div class="row">
+      <div class="col">
+        <mat-card>
+          <mat-card-header>
+            <h2>{{'room.details.descriptionTitle' | translate}}</h2>
+          </mat-card-header>
+          <mat-card-content>
+            {{room.description}}
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div class="col">
+        <mat-card class="section">
+          <div class="row m-0">
+            <div class="col p-2 section">
+              {{'room.date.start' | translate}}<br>
+              {{startDate}}
+            </div>
+            <div class="col p-2 section">
+              {{'room.date.end' | translate}}<br>
+              {{endDate}}
+            </div>
+          </div>
+          <div class="row m-0">
+            <div class="col p-2">
+              <div class="row pt-3">
+                <div class="col-10">
+                  Ühe öö hind
+                </div>
+                <div class="col">
+                  {{room.oneNightPriceInCents / 100}}
+                </div>
+              </div>
+              <div class="row pt-3">
+                <div class="col-10">
+                  Hind kokku
+                </div>
+                <div class="col">
+                  {{room.oneNightPriceInCents / 100 * 5}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <mat-checkbox
+            color="primary"
+            class="example-margin"
+            [(ngModel)]="acceptTerms">
+            {{'room.details.acceptTerms' | translate}}
+          </mat-checkbox>
+
+          <mat-card-actions class="justify-content-center pb-3">
+            <button
+              (click)="book()"
+              class="c-btn c-btn--primary w-25 text-center">
+              {{'button.book' | translate}}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</ng-container>

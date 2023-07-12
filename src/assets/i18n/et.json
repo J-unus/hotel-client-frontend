@@ -1,7 +1,9 @@
 {
   "button": {
     "search": "Otsi",
-    "chooseRoom": "Vali tuba"
+    "chooseRoom": "Vali tuba",
+    "back": "Tagasi",
+    "book": "Broneeri"
   },
   "room":{
     "book": "Broneeri tuba meie hotellis",
@@ -11,12 +13,14 @@
       "start": "Saabumise kuupäev",
       "end": "Lahkumise kuupäev"
     },
-    "card": {
+    "details": {
       "bedAmount": "{{number}}-kohaline tuba",
       "size": "Pindala: {{number}}m2",
       "nights": "({{number}} ööd)",
       "total": "Kokku",
-      "picAlt": "Hotelli toa pilt"
+      "picAlt": "Hotelli toa pilt",
+      "descriptionTitle": "Kirjeldus",
+      "acceptTerms": "Nõustun tingimustega"
     }
   },
   "sidebar": {

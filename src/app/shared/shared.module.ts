@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {HeaderComponent} from "./header/header.component";
 import {SidebarComponent} from "./sidebar/sidebar.component";
-import {UiModule} from "@egov/cvi-ng";
 import {DatepickerComponent} from "./datepicker/datepicker.component";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
@@ -22,20 +21,19 @@ import {TranslateModule} from "@ngx-translate/core";
     SelectComponent,
     ClassifierPipe,
   ],
-    imports: [
-        UiModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        FormsModule,
-        ReactiveFormsModule,
-        CommonModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        MatSelectModule,
-        MatSliderModule,
-        MatInputModule,
-        TranslateModule,
-    ],
+  imports: [
+    MatFormFieldModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatSliderModule,
+    MatInputModule,
+    TranslateModule,
+  ],
   exports: [
     HeaderComponent,
     SidebarComponent,

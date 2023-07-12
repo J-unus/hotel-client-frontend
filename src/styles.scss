@@ -43,3 +43,9 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   background-color: var(--color-black-coral-0) !important;
 }
+
+.small-arrow-left {
+  transform: rotate(90deg);
+  margin-right: 5px;
+  margin-bottom: 2px;
+}

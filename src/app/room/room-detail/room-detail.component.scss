@@ -1,0 +1,33 @@
+.image-container {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+
+  &--small {
+    height: 142px;
+  }
+}
+
+.zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-chip {
+  padding: 8px 40px;
+  border-radius: 4px;
+  border: 1px solid var(--color-black-coral-2);
+  background-color: white;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.container {
+  display: flex;
+}
+
+.section {
+  border: 1px solid var(--color-black-coral-2);
+}

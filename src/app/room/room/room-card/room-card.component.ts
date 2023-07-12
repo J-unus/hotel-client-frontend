@@ -3,8 +3,9 @@ import {RoomDto} from "../../dto/room.dto";
 import {BookingDto} from "../../dto/booking-dto";
 import {facility} from "../../../core/classifier/classifier";
 import {getDaysDiff} from "../../../core/util/date-util";
-import {DISPLAY_DATE_FORMAT} from "../../../core/util/constant";
+import {BACKEND_DATE_FORMAT, DISPLAY_DATE_FORMAT} from "../../../core/util/constant";
 import {TranslateService} from "@ngx-translate/core";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-card',
@@ -18,7 +19,9 @@ export class RoomCardComponent implements OnInit {
   facilityClassifier = facility;
   private nightsOfStay: number;
 
-  constructor(private translateService: TranslateService) {
+  constructor(private translateService: TranslateService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,13 +29,23 @@ export class RoomCardComponent implements OnInit {
   }
 
   getBookingTimeString(): string {
-    const nightsOfStayString = this.translateService.instant('room.card.nights', {number: this.nightsOfStay});
+    const nightsOfStayString = this.translateService.instant('room.details.nights', {number: this.nightsOfStay});
     return this.booking.startDate.format(DISPLAY_DATE_FORMAT) + ' - ' + this.booking.endDate.format(DISPLAY_DATE_FORMAT)
       + ' ' + nightsOfStayString;
   }
 
-  getCalculatedPrice(): string {
-    return (this.room.oneNightPriceInCents * this.nightsOfStay / 100).toFixed(0);
+  getCalculatedPrice(): number {
+    return this.room.oneNightPriceInCents * this.nightsOfStay / 100;
+  }
+
+  navigateToDetails() {
+    this.router.navigate([`${this.room.id}/details`], {
+      relativeTo: this.activatedRoute,
+      queryParams: {
+        startDate: this.booking.startDate.format(BACKEND_DATE_FORMAT),
+        endDate: this.booking.endDate.format(BACKEND_DATE_FORMAT),
+      }
+    });
   }
 }
 

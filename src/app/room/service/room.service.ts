@@ -15,4 +15,8 @@ export class RoomService {
   query(params: any): Observable<HttpResponse<RoomDto[]>> {
     return this.http.get<RoomDto[]>(this.RESOURCE_URL + '/rooms', { params: params, observe: 'response' });
   }
+
+  getById(id: number): Observable<RoomDto> {
+    return this.http.get<RoomDto>(this.RESOURCE_URL + '/rooms/' + id);
+  }
 }
