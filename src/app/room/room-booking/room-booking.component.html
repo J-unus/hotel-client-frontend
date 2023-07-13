@@ -12,29 +12,70 @@
 
   <div class="row">
     <div class="col-6">
-      <mat-card>
-        <mat-card-header>
-          <h2>{{'room.details.descriptionTitle' | translate}}</h2>
-        </mat-card-header>
-        <mat-card-content>
-          {{room.description}}
-        </mat-card-content>
+      <div>
+        <mat-card>
+          <mat-card-header>
+            <h2>{{'room.booking.guest.data' | translate}}</h2>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            <div class="row p-0">
+              <div class="col-6">
+                <app-input
+                  [control]="accountForm.controls.firstName"
+                  [placeholder]="'room.booking.guest.firstName' | translate">
+                </app-input>
+              </div>
+              <div class="col-6">
+                <app-input
+                  [control]="accountForm.controls.lastName"
+                  [placeholder]="'room.booking.guest.lastName' | translate">
+                </app-input>
+              </div>
+              <div class="col-6">
+                <app-input
+                  [control]="accountForm.controls.identityNumber"
+                  [placeholder]="'room.booking.guest.identityNumber' | translate">
+                </app-input>
+              </div>
+              <div class="col-6">
+                <app-input
+                  [control]="accountForm.controls.email"
+                  [placeholder]="'room.booking.guest.email' | translate">
+                </app-input>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <br>
 
-        <mat-checkbox
-          color="primary"
-          class="example-margin"
-          [(ngModel)]="acceptTerms">
-          {{'room.details.acceptTerms' | translate}}
-        </mat-checkbox>
+      <div>
+        <mat-card>
+          <mat-card-header>
+            <h2>{{'room.booking.rules' | translate}}</h2>
+          </mat-card-header>
+          <br>
+          <mat-card-content>
+            {{'loremIpsum' | translate}}
+          </mat-card-content>
 
-        <mat-card-actions class="justify-content-center pb-3">
-          <button
-            (click)="book()"
-            class="c-btn c-btn--primary w-25 text-center">
-            {{'button.book' | translate}}
-          </button>
-        </mat-card-actions>
-      </mat-card>
+          <mat-checkbox
+            color="primary"
+            class="example-margin"
+            [(ngModel)]="acceptTerms">
+            {{'room.details.acceptTerms' | translate}}
+          </mat-checkbox>
+
+          <mat-card-actions class="justify-content-center pb-3">
+            <button
+              (click)="book()"
+              class="c-btn c-btn--primary w-25 text-center">
+              {{'button.book' | translate}}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
     <div class="col-6">
 

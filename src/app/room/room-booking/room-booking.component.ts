@@ -3,6 +3,8 @@ import {RoomService} from "../service/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {RoomDto} from "../dto/room.dto";
 import {BookingService} from "../service/booking.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AccountService} from "../../core/auth/account.service";
 
 @Component({
   selector: 'app-room-booking',
@@ -15,8 +17,37 @@ export class RoomBookingComponent implements OnInit {
   room: RoomDto;
   acceptTerms = false;
 
+  accountForm = new FormGroup({
+    firstName: new FormControl<string>('', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+      ],
+    }),
+    lastName: new FormControl<string>('', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+      ],
+    }),
+    identityNumber: new FormControl<string>('', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+      ],
+    }),
+    email: new FormControl<string>('', {
+      nonNullable: true,
+      validators: [
+        Validators.required,
+      ],
+    }),
+  });
+
+
   constructor(private roomService: RoomService,
               private bookingService: BookingService,
+              private accountService: AccountService,
               private router: Router,
               private activatedRoute: ActivatedRoute) {
   }
@@ -33,6 +64,12 @@ export class RoomBookingComponent implements OnInit {
       this.startDate = queryParams['startDate'];
       this.endDate = queryParams['endDate'];
     });
+    this.accountService.identity(true).subscribe((account) => {
+      this.accountForm.controls.firstName.setValue(<string>account?.firstName);
+      this.accountForm.controls.lastName.setValue(<string>account?.lastName);
+      this.accountForm.controls.identityNumber.setValue(<string>account?.identityNumber);
+      this.accountForm.controls.email.setValue(<string>account?.email);
+    })
   }
 
   book(): void {
