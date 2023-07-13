@@ -3,7 +3,10 @@
     <nav id="sidebar" class="w-25 sidebar-controller">
       <ul>
         <li>
-          <a href="#" data-toggle="collapse" aria-expanded="false">
+          <a
+            (click)="navigate('room')"
+            data-toggle="collapse"
+            aria-expanded="false">
             <img
               src="assets/Icons/home.png"
               alt="Avalehe ikoon"
@@ -12,7 +15,10 @@
           </a>
         </li>
         <li>
-          <a href="#" data-toggle="collapse" aria-expanded="false">
+          <a
+            (click)="navigate('booking')"
+            data-toggle="collapse"
+            aria-expanded="false">
             <img
               src="assets/Icons/specialReq.png"
               alt="Broneeringute ikoon"
@@ -21,9 +27,25 @@
           </a>
         </li>
         <li>
-          <a href="#" data-toggle="collapse" aria-expanded="false">
+        <li>
+          <a
+            (click)="navigate('admin')"
+            data-toggle="collapse"
+            aria-expanded="false">
             <img
-              src="assets/Icons/family.png"
+              src="assets/Icons/country.png"
+              alt="Tubade ikoon"
+            />
+            <p>{{'sidebar.rooms' | translate}}</p>
+          </a>
+        </li>
+        <li>
+          <a
+            (click)="navigate('account')"
+            data-toggle="collapse"
+            aria-expanded="false">
+            <img
+              src="assets/Icons/myData.png"
               alt="Konto ikoon"
             />
             <p>{{'sidebar.account' | translate}}</p>
