@@ -47,5 +47,19 @@
     "bookings": "Broneeringud",
     "account": "Konto",
     "rooms": "Toad"
+  },
+  "admin": {
+    "bookings": "Broneeringud",
+    "upcomingBookings": "Tulevased broneeringud",
+    "previousBookings": "Eelmised broneeringud",
+    "rooms": "Hotellitoad",
+    "onePersonRoom": "1-kohalised toad",
+    "twoPersonRoom": "2-kohalised toad",
+    "threePersonRoom": "3-kohalised toad",
+    "room": "Tuba",
+    "dates": "Kuupäevad",
+    "guestName": "Külalise nimi",
+    "guestNr": "Külalise kontaktnumber",
+    "price": "Hind kokku"
   }
 }

@@ -8,6 +8,9 @@ import {MatCardModule} from "@angular/material/card";
 import {AdminComponent} from "./admin.component";
 import {Authority} from "../core/auth/authority.constant";
 import {UserRouteAccessService} from "../core/auth/user-route-access.service";
+import { RoomComponent } from './room/room.component';
+import { BookingsComponent } from './room/bookings/bookings.component';
+import {MatTableModule} from "@angular/material/table";
 
 const routes: Routes = [
   {
@@ -17,11 +20,19 @@ const routes: Routes = [
       authorities: [Authority.ADMIN],
     },
     canActivate: [UserRouteAccessService],
+  },
+  {
+    path: 'room',
+    component: RoomComponent,
+    data: {
+      authorities: [Authority.ADMIN],
+    },
+    canActivate: [UserRouteAccessService],
   }
 ];
 
 @NgModule({
-  declarations: [AdminComponent],
+  declarations: [AdminComponent, RoomComponent, BookingsComponent],
   imports: [
     RouterModule.forChild(routes),
     FormsModule,
@@ -29,6 +40,7 @@ const routes: Routes = [
     SharedModule,
     TranslateModule,
     MatCardModule,
+    MatTableModule,
   ]
 })
 export class AdminModule {
