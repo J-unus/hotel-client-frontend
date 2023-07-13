@@ -1,5 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {Classifier} from "../../core/classifier/classifier";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-select',
@@ -7,9 +8,8 @@ import {Classifier} from "../../core/classifier/classifier";
   styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent {
-  @Input() multiSelect = false;
-  @Input() placeholder = '';
-  @Input() selected: any[] = [];
+  @Input() control: FormControl;
+  @Input() placeholder: string;
   @Input() options: Classifier[] = [];
 }
 

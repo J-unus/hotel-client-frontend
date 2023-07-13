@@ -9,7 +9,8 @@
     "chooseRoom": "Vali tuba",
     "back": "Tagasi",
     "book": "Broneeri",
-    "continue": "Jätka"
+    "continue": "Jätka",
+    "backHome": "Tagasi kodulehele"
   },
   "room":{
     "book": "Broneeri tuba meie hotellis",
@@ -36,7 +37,8 @@
         "lastName": "Perekonnanimi",
         "personCode": "Isikukood",
         "email": "Email"
-      }
+      },
+      "success": "Teie broneering on edukalt kinnitatud!"
     }
   },
   "sidebar": {

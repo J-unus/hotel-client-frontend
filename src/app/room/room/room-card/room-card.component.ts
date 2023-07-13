@@ -8,7 +8,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-  selector: 'app-card',
+  selector: 'app-room-card',
   templateUrl: './room-card.component.html',
   styleUrls: ['./room-card.component.scss'],
 })

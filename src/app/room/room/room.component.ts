@@ -22,22 +22,20 @@ export class RoomComponent implements OnInit {
   rooms: RoomDto[] = [];
 
   roomFilterForm = new FormGroup({
-    startDate: new FormControl<string>('2023-01-01', {
+    startDate: new FormControl<string>('2023-08-01', {
       nonNullable: true,
       validators: [
         Validators.required,
       ],
     }),
-    endDate: new FormControl<string>('2023-01-05', {
+    endDate: new FormControl<string>('2023-08-05', {
       nonNullable: true,
       validators: [
         Validators.required,
       ],
     }),
-    roomAmounts: new FormControl([], {
-    }),
-    priceRanges: new FormControl([], {
-    }),
+    roomAmount: new FormControl(null),
+    priceRange: new FormControl(null),
   });
 
   constructor(private roomService: RoomService) {

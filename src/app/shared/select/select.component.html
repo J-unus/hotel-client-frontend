@@ -1,9 +1,5 @@
 <mat-form-field class="w-100">
-  <mat-select *ngIf="!multiSelect" [(ngModel)]="selected" [placeholder]="placeholder">
-    <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
-  </mat-select>
-
-  <mat-select *ngIf="multiSelect" [(ngModel)]="selected" multiple [placeholder]="placeholder">
+  <mat-select [formControl]="control" [placeholder]="placeholder">
     <mat-option *ngFor="let option of options" [value]="option.value">{{option.label}}</mat-option>
   </mat-select>
 </mat-form-field>

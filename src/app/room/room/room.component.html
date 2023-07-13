@@ -12,15 +12,15 @@
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
+      [control]="roomFilterForm.controls.roomAmount"
       [options]="roomAmountClassifier"
-      [multiSelect]="true"
       [placeholder]="'room.bedAmount' | translate"
     ></app-select>
   </div>
   <div class="flex-grow-1 pe-3">
     <app-select
+      [control]="roomFilterForm.controls.priceRange"
       [options]="priceRangeClassifier"
-      [multiSelect]="true"
       [placeholder]="'room.priceRange' | translate"
     ></app-select>
   </div>
@@ -31,6 +31,6 @@
 
 <div class="row row-gap-3">
   <div *ngFor="let room of rooms" class="col-xl-6 col-sm-12">
-    <app-card [room]="room" [booking]="bookingDto"></app-card>
+    <app-room-card [room]="room" [booking]="bookingDto"></app-room-card>
   </div>
 </div>
