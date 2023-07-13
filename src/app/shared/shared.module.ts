@@ -12,6 +12,9 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatInputModule} from "@angular/material/input";
 import {ClassifierPipe} from "./pipe/classifier.pipe";
 import {TranslateModule} from "@ngx-translate/core";
+import {MatCardModule} from "@angular/material/card";
+import {MatDialogModule} from "@angular/material/dialog";
+import {InputComponent} from "./input/input.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import {TranslateModule} from "@ngx-translate/core";
     DatepickerComponent,
     SelectComponent,
     ClassifierPipe,
+    InputComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -33,6 +37,8 @@ import {TranslateModule} from "@ngx-translate/core";
     MatSliderModule,
     MatInputModule,
     TranslateModule,
+    MatCardModule,
+    MatDialogModule,
   ],
   exports: [
     HeaderComponent,
@@ -40,6 +46,7 @@ import {TranslateModule} from "@ngx-translate/core";
     DatepickerComponent,
     SelectComponent,
     ClassifierPipe,
+    InputComponent,
   ]
 })
 export class SharedModule {
