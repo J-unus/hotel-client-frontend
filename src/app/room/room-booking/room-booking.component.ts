@@ -5,6 +5,9 @@ import {RoomDto} from "../dto/room.dto";
 import {BookingService} from "../service/booking.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountService} from "../../core/auth/account.service";
+import * as moment from "moment";
+import {Moment} from "moment";
+import {getDaysDiff} from "../../core/util/date-util";
 
 @Component({
   selector: 'app-room-booking',
@@ -12,8 +15,8 @@ import {AccountService} from "../../core/auth/account.service";
   styleUrls: ['./room-booking.component.scss'],
 })
 export class RoomBookingComponent implements OnInit {
-  startDate: string;
-  endDate: string;
+  startDate: Moment;
+  endDate: Moment;
   room: RoomDto;
   acceptTerms = false;
 
@@ -61,8 +64,8 @@ export class RoomBookingComponent implements OnInit {
     });
 
     this.activatedRoute.queryParams.subscribe(queryParams => {
-      this.startDate = queryParams['startDate'];
-      this.endDate = queryParams['endDate'];
+      this.startDate = moment(queryParams['startDate']);
+      this.endDate = moment(queryParams['endDate']);
     });
     this.accountService.identity(true).subscribe((account) => {
       this.accountForm.controls.firstName.setValue(<string>account?.firstName);
@@ -78,5 +81,9 @@ export class RoomBookingComponent implements OnInit {
         relativeTo: this.activatedRoute,
       });
     });
+  }
+
+  getCalculatedPrice(): number {
+    return this.room.oneNightPriceInCents * getDaysDiff(this.startDate, this.endDate) / 100;
   }
 }

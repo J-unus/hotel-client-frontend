@@ -28,7 +28,7 @@
       "total": "Kokku",
       "picAlt": "Hotelli toa pilt",
       "descriptionTitle": "Kirjeldus",
-      "acceptTerms": "Nõustun tingimustega"
+      "acceptTerms": "Nõustun reeglite ja tingimustega"
     },
     "booking": {
       "title": "Broneerimine",
@@ -40,6 +40,8 @@
         "identityNumber": "Isikukood",
         "email": "Email"
       },
+      "oneNightPrice": "Ühe öö hind",
+      "totalPrice": "Hind kokku",
       "success": "Teie broneering on edukalt kinnitatud!"
     }
   },

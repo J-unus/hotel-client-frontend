@@ -15,6 +15,8 @@ import {TranslateModule} from "@ngx-translate/core";
 import {MatCardModule} from "@angular/material/card";
 import {MatDialogModule} from "@angular/material/dialog";
 import {InputComponent} from "./input/input.component";
+import {BackButtonComponent} from "./back-button/back-button.component";
+import {DateFormatPipe} from "./pipe/date-format.pipe";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {InputComponent} from "./input/input.component";
     DatepickerComponent,
     SelectComponent,
     ClassifierPipe,
+    DateFormatPipe,
     InputComponent,
+    BackButtonComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -46,7 +50,9 @@ import {InputComponent} from "./input/input.component";
     DatepickerComponent,
     SelectComponent,
     ClassifierPipe,
+    DateFormatPipe,
     InputComponent,
+    BackButtonComponent,
   ]
 })
 export class SharedModule {

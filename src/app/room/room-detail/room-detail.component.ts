@@ -4,6 +4,9 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {RoomDto} from "../dto/room.dto";
 import {facility} from "../../core/classifier/classifier";
 import {BookingService} from "../service/booking.service";
+import {getDaysDiff} from "../../core/util/date-util";
+import * as moment from "moment";
+import {Moment} from "moment";
 
 @Component({
   selector: 'app-room-detail',
@@ -13,8 +16,8 @@ import {BookingService} from "../service/booking.service";
 export class RoomDetailComponent implements OnInit {
   facilityClassifier = facility;
 
-  startDate: string;
-  endDate: string;
+  startDate: Moment;
+  endDate: Moment;
   room: RoomDto;
   acceptTerms = false;
 
@@ -33,8 +36,8 @@ export class RoomDetailComponent implements OnInit {
     });
 
     this.activatedRoute.queryParams.subscribe(queryParams => {
-      this.startDate = queryParams['startDate'];
-      this.endDate = queryParams['endDate'];
+      this.startDate = moment(queryParams['startDate']);
+      this.endDate = moment(queryParams['endDate']);
     });
   }
 
@@ -45,5 +48,9 @@ export class RoomDetailComponent implements OnInit {
         endDate: this.endDate,
       }
     });
+  }
+
+  getCalculatedPrice(): number {
+    return this.room.oneNightPriceInCents * getDaysDiff(this.startDate, this.endDate) / 100;
   }
 }

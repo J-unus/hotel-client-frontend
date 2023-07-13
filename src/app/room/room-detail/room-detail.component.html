@@ -1,11 +1,4 @@
-<button class="c-btn c-btn--text">
-  <img
-    class="small-arrow-left"
-    src="assets/Icons/arrow_down.svg"
-    alt="Konto ikoon"
-  />
-  {{'button.back' | translate}}
-</button>
+<app-back-button></app-back-button>
 <ng-container *ngIf="room">
   <h2>{{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h2>
   <h6>{{'room.details.size' | translate:{number: room.size} }}</h6>
@@ -49,10 +42,11 @@
       <div class="col">
         <mat-card>
           <mat-card-header>
-            <h2>{{'room.details.descriptionTitle' | translate}}</h2>
+            <h3>{{'room.details.descriptionTitle' | translate}}</h3>
           </mat-card-header>
+          <br>
           <mat-card-content>
-            {{room.description}}
+            <p>{{room.description}}</p>
           </mat-card-content>
         </mat-card>
       </div>
@@ -61,46 +55,42 @@
         <mat-card class="section">
           <div class="row m-0">
             <div class="col p-2 section">
-              {{'room.date.start' | translate}}<br>
-              {{startDate}}
+              <p class="grey-label">{{'room.date.start' | translate}}<br></p>
+              {{startDate | dateFormat}}
             </div>
             <div class="col p-2 section">
-              {{'room.date.end' | translate}}<br>
-              {{endDate}}
+              <p class="grey-label">{{'room.date.end' | translate}}<br></p>
+              {{endDate | dateFormat}}
             </div>
           </div>
-          <div class="row m-0">
-            <div class="col p-2">
-              <div class="row pt-3">
-                <div class="col-10">
-                  Ühe öö hind
-                </div>
-                <div class="col">
-                  {{room.oneNightPriceInCents / 100}}
-                </div>
-              </div>
-              <div class="row pt-3">
-                <div class="col-10">
-                  Hind kokku
-                </div>
-                <div class="col">
-                  {{room.oneNightPriceInCents / 100 * 5}}
-                </div>
-              </div>
-            </div>
-          </div>
+          <br>
 
-          <mat-checkbox
-            color="primary"
-            class="example-margin"
-            [(ngModel)]="acceptTerms">
-            {{'room.details.acceptTerms' | translate}}
-          </mat-checkbox>
+          <div class="row m-0 small-text ps-2 pe-2">
+            <div class="col p-2">
+              <div class="row">
+                <div class="col-9">
+                  {{'room.booking.oneNightPrice' | translate}}
+                </div>
+                <div class="col text-end">
+                  {{room.oneNightPriceInCents / 100 | currency:room.currency: 'symbol-narrow': '0.0'}}
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-9">
+                  {{'room.booking.totalPrice' | translate}}
+                </div>
+                <div class="col small-text-bold text-end">
+                  {{getCalculatedPrice() | currency:room.currency: 'symbol-narrow': '0.0'}}
+                </div>
+              </div>
+            </div>
+          </div>
 
           <mat-card-actions class="justify-content-center pb-3">
             <button
               (click)="toBooking()"
-              class="c-btn c-btn--primary w-25 text-center">
+              class="c-btn c-btn--primary text-center">
               {{'button.book' | translate}}
             </button>
           </mat-card-actions>

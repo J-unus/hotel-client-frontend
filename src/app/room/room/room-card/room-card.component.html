@@ -5,28 +5,29 @@
          [alt]="'room.details.picAlt' | translate"
          class="zoom-image">
   </div>
+  <br>
   <mat-card-content class="d-grid row-gap-3">
     <div>
-      <h3>{{'room.details.roomAmount' | translate:{ number: room.roomAmount } }}</h3>
-      <h4>{{'room.details.size' | translate:{ number: room.size } }}</h4>
+      <h5>{{'room.details.roomAmount' | translate:{ number: room.roomAmount } }}</h5>
+      <span class="small-text">{{'room.details.size' | translate:{ number: room.size } }}</span>
     </div>
-    <div class="min-height-75">
+    <div class="min-height-65">
       <div class="d-flex flex-wrap gap-1">
         <div *ngFor="let facility of room.roomFacilities"
              class="card-chip">
-          {{facility | classifier: facilityClassifier}}
+          <span class="small-text-bold">{{facility | classifier: facilityClassifier}}</span>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <div class="d-flex justify-content-start">
-          <span>{{getBookingTimeString()}}</span>
+          <span class="small-text">{{getBookingTimeString()}}</span>
         </div>
       </div>
       <div class="col">
         <div class="d-flex justify-content-end">
-          <span class="fw-bold">
+          <span class="large-text-bold">
             {{'room.details.total' | translate}}:
             {{getCalculatedPrice() | currency:room.currency: 'symbol-narrow': '0.0'}}
           </span>
@@ -37,7 +38,7 @@
   <mat-card-actions class="justify-content-center">
     <button
       (click)="navigateToDetails()"
-      class="c-btn c-btn--primary w-50 text-center">
+      class="c-btn c-btn--primary text-center">
       {{'button.chooseRoom' | translate}}
     </button>
   </mat-card-actions>

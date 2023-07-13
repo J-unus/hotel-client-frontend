@@ -1,11 +1,4 @@
-<button class="c-btn c-btn--text">
-  <img
-    class="small-arrow-left"
-    src="assets/Icons/arrow_down.svg"
-    alt="Konto ikoon"
-  />
-  {{'button.back' | translate}}
-</button>
+<app-back-button></app-back-button>
 <ng-container *ngIf="room">
   <h2>{{'room.booking.title' | translate}}</h2>
   <br>
@@ -49,36 +42,78 @@
         </mat-card>
       </div>
       <br>
-
-      <div>
-        <mat-card>
-          <mat-card-header>
-            <h2>{{'room.booking.rules' | translate}}</h2>
-          </mat-card-header>
-          <br>
-          <mat-card-content>
-            {{'loremIpsum' | translate}}
-          </mat-card-content>
-
-          <mat-checkbox
-            color="primary"
-            class="example-margin"
-            [(ngModel)]="acceptTerms">
-            {{'room.details.acceptTerms' | translate}}
-          </mat-checkbox>
-
-          <mat-card-actions class="justify-content-center pb-3">
-            <button
-              (click)="book()"
-              class="c-btn c-btn--primary w-25 text-center">
-              {{'button.book' | translate}}
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
     </div>
     <div class="col-6">
+      <mat-card class="section">
+        <div class="row m-0">
+          <div class="col p-2 section">
+            <p class="grey-label">{{'room.date.start' | translate}}<br></p>
+            {{startDate | dateFormat}}
+          </div>
+          <div class="col p-2 section">
+            <p class="grey-label">{{'room.date.end' | translate}}<br></p>
+            {{endDate | dateFormat}}
+          </div>
+        </div>
+        <br>
+        <div class="row m-0 small-text ps-2 pe-2">
+          <div class="col p-2">
+            <div class="row">
+              <div class="col-9">
+                <h5>{{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h5>
+              </div>
+              <div class="col text-end">
+                {{'room.details.size' | translate:{number: room.size} }}
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-9">
+                {{'room.booking.oneNightPrice' | translate}}
+              </div>
+              <div class="col text-end">
+                {{room.oneNightPriceInCents / 100 | currency:room.currency: 'symbol-narrow': '0.0'}}
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-9">
+                {{'room.booking.totalPrice' | translate}}
+              </div>
+              <div class="col small-text-bold text-end">
+                {{getCalculatedPrice() | currency:room.currency: 'symbol-narrow': '0.0'}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+      </mat-card>
+      <br>
 
+      <mat-card>
+        <mat-card-header>
+          <h2>{{'room.booking.rules' | translate}}</h2>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+          <p>{{'loremIpsum' | translate}}</p>
+        </mat-card-content>
+
+        <mat-checkbox
+          color="primary"
+          class="ps-2"
+          [(ngModel)]="acceptTerms">
+          <span class="small-text">{{'room.details.acceptTerms' | translate}}</span>
+        </mat-checkbox>
+
+        <mat-card-actions class="justify-content-center pb-3">
+          <button
+            (click)="book()"
+            class="c-btn c-btn--primary text-center">
+            {{'button.book' | translate}}
+          </button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
 </ng-container>
