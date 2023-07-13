@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import {RoomBookingComponent} from "./room-booking/room-booking.component";
 import {UserRouteAccessService} from "../core/auth/user-route-access.service";
 import {Authority} from "../core/auth/authority.constant";
+import {RoomBookingCompletedComponent} from "./room-booking/room-booking-completed/room-booking-completed.component";
 
 const routes: Routes = [
   {
@@ -30,10 +31,24 @@ const routes: Routes = [
     canActivate: [UserRouteAccessService],
     component: RoomBookingComponent,
   },
+  {
+    path: ':roomId/booking/completed',
+    data: {
+      authorities: [Authority.USER],
+    },
+    canActivate: [UserRouteAccessService],
+    component: RoomBookingCompletedComponent,
+  },
 ];
 
 @NgModule({
-  declarations: [RoomComponent, RoomCardComponent, RoomDetailComponent, RoomBookingComponent],
+  declarations: [
+    RoomComponent,
+    RoomCardComponent,
+    RoomDetailComponent,
+    RoomBookingComponent,
+    RoomBookingCompletedComponent
+  ],
   imports: [
     RouterModule.forChild(routes),
     FormsModule,

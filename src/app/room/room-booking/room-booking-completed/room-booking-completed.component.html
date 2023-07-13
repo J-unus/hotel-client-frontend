@@ -1,0 +1,22 @@
+<div class="col-6 pt-5 m-auto">
+  <mat-card class="p-3">
+    <mat-card-content>
+      <div class="d-flex justify-content-center color-success">
+        <img
+          src="assets/Icons/success.png"
+          alt="Avalehe ikoon"
+        />
+        <h2 class="ps-3">{{'room.booking.success' | translate}}</h2>
+      </div>
+      <br>
+    </mat-card-content>
+
+    <mat-card-actions class="justify-content-center pb-3">
+      <button
+        (click)="navigate()"
+        class="c-btn c-btn--primary text-center">
+        {{'button.backHome' | translate}}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
