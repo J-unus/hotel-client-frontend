@@ -20,6 +20,7 @@ export class RoomComponent implements OnInit {
   priceRangeClassifier = priceRange;
   bookingDto = new BookingDto();
   rooms: RoomDto[] = [];
+  displayNoResults = false;
 
   roomFilterForm = new FormGroup({
     startDate: new FormControl<string>('2023-08-01', {
@@ -54,6 +55,7 @@ export class RoomComponent implements OnInit {
     }
     this.roomService.query(params).subscribe((res: HttpResponse<RoomDto[]>) => {
       this.rooms = res.body ? res.body : [];
+      this.displayNoResults = this.rooms.length === 0;
       this.bookingDto.startDate = moment(this.roomFilterForm.controls.startDate.value)
       this.bookingDto.endDate = moment(this.roomFilterForm.controls.endDate.value)
     });

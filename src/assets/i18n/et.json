@@ -14,14 +14,15 @@
   },
   "room":{
     "book": "Broneeri tuba meie hotellis",
-    "bedAmount": "Toa suurus",
+    "noResults": "Tubasid ei leitud antud tingimustega",
+    "roomAmount": "Toa suurus",
     "priceRange": "Hinnavahemik",
     "date": {
       "start": "Saabumise kuupäev",
       "end": "Lahkumise kuupäev"
     },
     "details": {
-      "bedAmount": "{{number}}-kohaline tuba",
+      "roomAmount": "{{number}}-kohaline tuba",
       "size": "Pindala: {{number}}m2",
       "nights": "({{number}} ööd)",
       "total": "Kokku",

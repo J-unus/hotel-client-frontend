@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-room-booking-completed',
@@ -8,9 +8,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class RoomBookingCompletedComponent {
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private router: Router) {
   }
 
   navigate(): void {
+    this.router.navigate(['room']);
   }
 }

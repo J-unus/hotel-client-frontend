@@ -1,5 +1,6 @@
 <mat-form-field class="w-100">
   <mat-select [formControl]="control" [placeholder]="placeholder">
+    <mat-option [value]="null"></mat-option>
     <mat-option *ngFor="let option of options" [value]="option.value">{{option.label}}</mat-option>
   </mat-select>
 </mat-form-field>
