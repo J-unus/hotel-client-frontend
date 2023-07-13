@@ -13,6 +13,8 @@ import {MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
 import {MatMomentDateModule} from "@angular/material-moment-adapter";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {NgxWebstorageModule} from "ngx-webstorage";
+import {httpInterceptorProviders} from "./core/interceptor";
 
 const ESTONIAN_DATE_FORMATS = {
   parse: {
@@ -52,10 +54,12 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
+    NgxWebstorageModule.forRoot({ prefix: 'hotel', separator: '-', caseSensitive: true }),
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'et'},
     {provide: MAT_DATE_FORMATS, useValue: ESTONIAN_DATE_FORMATS},
+    httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]
 })

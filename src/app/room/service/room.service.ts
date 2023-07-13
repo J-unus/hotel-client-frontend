@@ -2,12 +2,13 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {RoomDto} from "../dto/room.dto";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
-  private readonly RESOURCE_URL: string = 'http://localhost:8080/public-api/room';
+  private readonly RESOURCE_URL: string = environment.hotelApi + '/public-api/room';
 
   constructor(private http: HttpClient) {
   }

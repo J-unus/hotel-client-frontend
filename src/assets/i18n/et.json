@@ -1,9 +1,15 @@
 {
+  "login": {
+    "title": "Logi sisse",
+    "email": "Email",
+    "password": "Parool"
+  },
   "button": {
     "search": "Otsi",
     "chooseRoom": "Vali tuba",
     "back": "Tagasi",
-    "book": "Broneeri"
+    "book": "Broneeri",
+    "continue": "Jätka"
   },
   "room":{
     "book": "Broneeri tuba meie hotellis",
@@ -21,11 +27,22 @@
       "picAlt": "Hotelli toa pilt",
       "descriptionTitle": "Kirjeldus",
       "acceptTerms": "Nõustun tingimustega"
+    },
+    "booking": {
+      "title": "Broneerimine",
+      "guest":{
+        "data": "Külalise andmed",
+        "firstName": "Eesnimi",
+        "lastName": "Perekonnanimi",
+        "personCode": "Isikukood",
+        "email": "Email"
+      }
     }
   },
   "sidebar": {
     "home": "Avaleht",
     "bookings": "Broneeringud",
-    "account": "Konto"
+    "account": "Konto",
+    "rooms": "Toad"
   }
 }

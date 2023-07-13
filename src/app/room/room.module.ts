@@ -9,6 +9,9 @@ import {TranslateModule} from "@ngx-translate/core";
 import {RoomDetailComponent} from "./room-detail/room-detail.component";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
+import {RoomBookingComponent} from "./room-booking/room-booking.component";
+import {UserRouteAccessService} from "../core/auth/user-route-access.service";
+import {Authority} from "../core/auth/authority.constant";
 
 const routes: Routes = [
   {
@@ -16,13 +19,21 @@ const routes: Routes = [
     component: RoomComponent,
   },
   {
-    path: ':id/details',
+    path: ':roomId/details',
     component: RoomDetailComponent,
+  },
+  {
+    path: ':roomId/booking',
+    data: {
+      authorities: [Authority.USER],
+    },
+    canActivate: [UserRouteAccessService],
+    component: RoomBookingComponent,
   },
 ];
 
 @NgModule({
-  declarations: [RoomComponent, RoomCardComponent, RoomDetailComponent],
+  declarations: [RoomComponent, RoomCardComponent, RoomDetailComponent, RoomBookingComponent],
   imports: [
     RouterModule.forChild(routes),
     FormsModule,
