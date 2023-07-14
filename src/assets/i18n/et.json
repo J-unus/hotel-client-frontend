@@ -4,6 +4,10 @@
     "email": "Email",
     "password": "Parool"
   },
+  "header": {
+    "login": "Logi sisse",
+    "logout": "Logi välja"
+  },
   "button": {
     "search": "Otsi",
     "chooseRoom": "Vali tuba",

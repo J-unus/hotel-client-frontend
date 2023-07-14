@@ -3,6 +3,17 @@
     <img src="assets/smit_icon.png" alt="Smit icon" class="">
   </div>
   <div>
-    <a href="#">Logi välja</a>
+    <button
+      *ngIf="!isAuthenticated()"
+      (click)="login()"
+      class="c-btn c-btn--text">
+      {{'header.login' | translate}}
+    </button>
+    <button
+      *ngIf="isAuthenticated()"
+      (click)="logout()"
+      class="c-btn c-btn--text">
+      {{'header.logout' | translate}}
+    </button>
   </div>
 </div>

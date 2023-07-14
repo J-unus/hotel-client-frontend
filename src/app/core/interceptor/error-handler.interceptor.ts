@@ -15,7 +15,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
         error: (err: HttpErrorResponse) => {
           if (err.status === 400 && err.error && err.error.detail && err.error.detail.startsWith('serverMessage.error')) {
             this.notificationService.translateAndAlertError(err.error.detail);
-          } else {
+          } else if (err.status !== 401) {
             this.notificationService.translateAndAlertError('serverMessage.error.generic');
           }
         },
