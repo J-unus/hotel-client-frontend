@@ -8,6 +8,7 @@ import {AccountService} from "../../core/auth/account.service";
 import * as moment from "moment";
 import {Moment} from "moment";
 import {getDaysDiff} from "../../core/util/date-util";
+import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
 
 @Component({
   selector: 'app-room-booking',
@@ -74,7 +75,10 @@ export class RoomBookingComponent implements OnInit {
 
   book(): void {
     this.accountService.save(this.accountForm.getRawValue()).subscribe(() => {
-      this.bookingService.book(this.room.id, {startDate: this.startDate, endDate: this.endDate}).subscribe(() => {
+      this.bookingService.book(this.room.id, {
+        startDate: this.startDate.format(BACKEND_DATE_FORMAT),
+        endDate: this.endDate.format(BACKEND_DATE_FORMAT)
+      }).subscribe(() => {
         this.router.navigate(['completed'], {
           relativeTo: this.activatedRoute,
         });

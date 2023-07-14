@@ -1,1 +1,22 @@
-booking
+<h2>{{'booking.title' | translate}}</h2>
+<br>
+
+<ng-container *ngIf="bookings && bookings.futureBookings && bookings.futureBookings.length > 0">
+  <h3>{{'booking.futureBookings' | translate}}</h3>
+  <br>
+
+  <div *ngFor="let booking of bookings.futureBookings">
+    <app-booking-card [booking]="booking"></app-booking-card>
+    <br>
+  </div>
+</ng-container>
+<br>
+<ng-container *ngIf="bookings && bookings.pastBookings && bookings.pastBookings.length > 0">
+  <h3>{{'booking.pastBookings' | translate}}</h3>
+  <br>
+
+  <div *ngFor="let booking of bookings.pastBookings">
+    <app-booking-card [booking]="booking"></app-booking-card>
+    <br>
+  </div>
+</ng-container>

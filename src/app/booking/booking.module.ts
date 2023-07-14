@@ -8,6 +8,7 @@ import {MatCardModule} from "@angular/material/card";
 import {BookingComponent} from "./booking.component";
 import {Authority} from "../core/auth/authority.constant";
 import {UserRouteAccessService} from "../core/auth/user-route-access.service";
+import {BookingCardComponent} from "./booking-card/booking-card.component";
 
 const routes: Routes = [
   {
@@ -21,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [BookingComponent],
+  declarations: [BookingComponent, BookingCardComponent],
   imports: [
     RouterModule.forChild(routes),
     FormsModule,

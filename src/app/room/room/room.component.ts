@@ -1,5 +1,4 @@
 import {Component, OnInit} from "@angular/core";
-import {BookingDto} from "../dto/booking-dto";
 import {priceRange, roomAmount} from "../../core/classifier/classifier";
 import {RoomService} from "../service/room.service";
 import {RoomDto} from "../dto/room.dto";
@@ -7,6 +6,7 @@ import {HttpResponse} from "@angular/common/http";
 import {ASCENDING, DESCENDING} from "../../core/util/constant";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import * as moment from "moment";
+import {BookingDateDto} from "../dto/booking.dto";
 
 @Component({
   selector: 'app-room',
@@ -19,7 +19,7 @@ export class RoomComponent implements OnInit {
   ascending = true;
   roomAmountClassifier = roomAmount;
   priceRangeClassifier = priceRange;
-  bookingDto = new BookingDto();
+  bookingDto = new BookingDateDto();
   rooms: RoomDto[] = [];
   displayNoResults = false;
   minDate = new Date();

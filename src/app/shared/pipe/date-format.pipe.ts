@@ -1,13 +1,17 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {Moment} from "moment";
 import {DISPLAY_DATE_FORMAT} from "../../core/util/constant";
+import * as moment from "moment";
 
 @Pipe({
 	name: 'dateFormat',
 })
 export class DateFormatPipe implements PipeTransform {
 
-	transform(date: Moment): string {
-		return date.format(DISPLAY_DATE_FORMAT);
+	transform(date: any): string {
+    const momentDate = moment(date);
+    if (momentDate.isValid()) {
+      return momentDate.format(DISPLAY_DATE_FORMAT);
+    }
+    return date;
 	}
 }

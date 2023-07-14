@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {RoomDto} from "../../dto/room.dto";
-import {BookingDto} from "../../dto/booking-dto";
 import {facility} from "../../../core/classifier/classifier";
 import {getDaysDiff} from "../../../core/util/date-util";
 import {BACKEND_DATE_FORMAT, DISPLAY_DATE_FORMAT} from "../../../core/util/constant";
 import {TranslateService} from "@ngx-translate/core";
 import {ActivatedRoute, Router} from "@angular/router";
+import {BookingDateDto} from "../../dto/booking.dto";
 
 @Component({
   selector: 'app-room-card',
@@ -14,7 +14,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class RoomCardComponent implements OnInit {
   @Input() room: RoomDto;
-  @Input() booking: BookingDto;
+  @Input() booking: BookingDateDto;
 
   facilityClassifier = facility;
   private nightsOfStay: number;
@@ -31,7 +31,7 @@ export class RoomCardComponent implements OnInit {
   getBookingTimeString(): string {
     const nightsOfStayString = this.translateService.instant('room.details.nights', {number: this.nightsOfStay});
     return this.booking.startDate.format(DISPLAY_DATE_FORMAT) + ' - ' + this.booking.endDate.format(DISPLAY_DATE_FORMAT)
-      + ' ' + nightsOfStayString;
+      + ' (' + nightsOfStayString + ')';
   }
 
   getCalculatedPrice(): number {

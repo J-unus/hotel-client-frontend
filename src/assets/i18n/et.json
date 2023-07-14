@@ -14,7 +14,8 @@
     "back": "Tagasi",
     "book": "Broneeri",
     "continue": "Jätka",
-    "backHome": "Tagasi kodulehele"
+    "backHome": "Tagasi kodulehele",
+    "cancel": "Tühista"
   },
   "room": {
     "book": "Broneeri tuba meie hotellis",
@@ -28,7 +29,7 @@
     "details": {
       "roomAmount": "{{number}}-kohaline tuba",
       "size": "Pindala: {{number}}m2",
-      "nights": "({{number}} ööd)",
+      "nights": "{{number}} ööd",
       "total": "Kokku",
       "picAlt": "Hotelli toa pilt",
       "descriptionTitle": "Kirjeldus",
@@ -55,6 +56,11 @@
       "totalPrice": "Hind kokku",
       "success": "Teie broneering on edukalt kinnitatud!"
     }
+  },
+  "booking": {
+    "title": "Minu broneeringud",
+    "futureBookings": "Tulevased broneeringud",
+    "pastBookings": "Eelmised broneeringud"
   },
   "sidebar": {
     "home": "Avaleht",

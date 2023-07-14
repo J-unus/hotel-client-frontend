@@ -1,8 +1,11 @@
-import {Moment} from "moment";
+import * as moment from "moment/moment";
 
-export const getDaysDiff = (startDate: Moment, endDate: Moment): number => {
-  if (!startDate || !endDate) {
-    return 0;
+export const getDaysDiff = (startDate: any, endDate: any): number => {
+  const momentStartDate = moment(startDate);
+  const momentEndDate = moment(endDate);
+
+  if (momentStartDate.isValid() && momentEndDate.isValid()) {
+    return momentEndDate.startOf('day').diff(momentStartDate.startOf('day'), 'days');
   }
-  return endDate.diff(startDate, 'days');
+  return 0;
 };

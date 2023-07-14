@@ -61,6 +61,12 @@ h3 {
   line-height: 36px;
 }
 
+h4 {
+  font: 20px 'roboto';
+  font-weight: 400;
+  line-height: 30px;
+}
+
 h5 {
   font: 18px 'roboto';
   font-weight: 400;
@@ -102,4 +108,8 @@ p {
   font: 18px Roboto;
   font-weight: 600;
   line-height: 27px;
+}
+
+.color-secondary {
+  color: var(--color-sapphire-blue-9);
 }

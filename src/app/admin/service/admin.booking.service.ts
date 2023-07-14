@@ -2,8 +2,8 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {BookingDto} from "../../room/dto/booking-dto";
 import {BookingPage} from "../room/dto/bookings-dto";
+import {BookingDateDto} from "../../room/dto/booking.dto";
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class AdminBookingService {
   constructor(private http: HttpClient) {
   }
 
-  getVisitorBookings(): Observable<BookingDto[]> {
-    return this.http.get<BookingDto[]>(this.RESOURCE_URL + '/bookings/visitor');
+  getVisitorBookings(): Observable<BookingDateDto[]> {
+    return this.http.get<BookingDateDto[]>(this.RESOURCE_URL + '/bookings/visitor');
   }
 
   getBookingList(page: number, size: number): Observable<BookingPage> {
