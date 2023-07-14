@@ -1,16 +1,16 @@
 <div class="header d-flex align-items-center justify-content-between pe-4">
   <div>
-    <img src="assets/smit_icon.png" alt="Smit icon" class="">
+    <img src="assets/smit_icon.png" alt="Smit icon">
   </div>
   <div>
     <button
-      *ngIf="!isAuthenticated()"
+      *ngIf="!account"
       (click)="login()"
       class="c-btn c-btn--text">
       {{'header.login' | translate}}
     </button>
     <button
-      *ngIf="isAuthenticated()"
+      *ngIf="account"
       (click)="logout()"
       class="c-btn c-btn--text">
       {{'header.logout' | translate}}
