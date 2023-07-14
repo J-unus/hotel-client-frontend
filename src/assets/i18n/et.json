@@ -58,6 +58,12 @@
     "account": "Konto",
     "rooms": "Toad"
   },
+  "notification": "Teade",
+  "serverMessage": {
+    "error": {
+      "generic": "Midagi läks valesti"
+    }
+  },
   "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, ipsum ut ullamcorper placerat, ante nulla porttitor nulla, suscipit vestibulum est ex sed dui. Sed suscipit mattis quam, vitae hendrerit nisl ornare et. Duis tempor laoreet ornare. Donec molestie consequat pharetra. Curabitur malesuada vulputate purus. Nullam ullamcorper mattis elit, quis tempus ipsum hendrerit ac. Cras ullamcorper dui at facilisis imperdiet. Curabitur dictum, leo id pharetra porttitor, elit massa pellentesque quam, sit amet fermentum libero velit eget diam. Ut malesuada, eros a mattis dictum, diam nunc mattis mauris, vel imperdiet mi lorem eu sem.",
   "admin": {
     "bookings": "Broneeringud",

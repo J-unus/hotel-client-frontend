@@ -15,6 +15,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {httpInterceptorProviders} from "./core/interceptor";
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 
 const ESTONIAN_DATE_FORMATS = {
   parse: {
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     MatMomentDateModule,
+    MatSnackBarModule,
     TranslateModule.forRoot({
       defaultLanguage: 'et',
       loader: {
@@ -59,6 +61,7 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'et'},
     {provide: MAT_DATE_FORMATS, useValue: ESTONIAN_DATE_FORMATS},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
     httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]

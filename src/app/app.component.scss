@@ -16,3 +16,9 @@
   border: 1px solid var(--color-black-coral-6) !important;
   border-radius: 4px !important;
 }
+
+::ng-deep .mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: transparent !important;
+  color: black !important;
+  box-shadow: none !important;
+}

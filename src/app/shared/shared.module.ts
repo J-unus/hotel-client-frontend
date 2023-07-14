@@ -17,6 +17,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {InputComponent} from "./input/input.component";
 import {BackButtonComponent} from "./back-button/back-button.component";
 import {DateFormatPipe} from "./pipe/date-format.pipe";
+import {AlertMessageComponent} from "./alert-message/alert-message.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {DateFormatPipe} from "./pipe/date-format.pipe";
     DateFormatPipe,
     InputComponent,
     BackButtonComponent,
+    AlertMessageComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -53,6 +55,7 @@ import {DateFormatPipe} from "./pipe/date-format.pipe";
     DateFormatPipe,
     InputComponent,
     BackButtonComponent,
+    AlertMessageComponent,
   ]
 })
 export class SharedModule {
