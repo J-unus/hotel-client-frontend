@@ -13,6 +13,7 @@ import * as moment from "moment";
   templateUrl: './room.component.html'
 })
 export class RoomComponent implements OnInit {
+  private readonly MAX_BOOKING_TIME_IN_YEARS = 1;
   totalItems = 0;
   itemsPerPage = 20;
   ascending = true;
@@ -21,6 +22,8 @@ export class RoomComponent implements OnInit {
   bookingDto = new BookingDto();
   rooms: RoomDto[] = [];
   displayNoResults = false;
+  minDate = new Date();
+  maxDate = new Date(new Date().setFullYear(this.minDate.getFullYear() + this.MAX_BOOKING_TIME_IN_YEARS));
 
   roomFilterForm = new FormGroup({
     startDate: new FormControl<string>('2023-08-01', {

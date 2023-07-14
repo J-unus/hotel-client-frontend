@@ -5,43 +5,64 @@
 
   <div class="row">
     <div class="col-6">
-      <div>
-        <mat-card>
-          <mat-card-header>
-            <h2>{{'room.booking.guest.data' | translate}}</h2>
-          </mat-card-header>
-          <br>
-          <mat-card-content>
-            <div class="row p-0">
-              <div class="col-6">
-                <app-input
-                  [control]="accountForm.controls.firstName"
-                  [placeholder]="'room.booking.guest.firstName' | translate">
-                </app-input>
-              </div>
-              <div class="col-6">
-                <app-input
-                  [control]="accountForm.controls.lastName"
-                  [placeholder]="'room.booking.guest.lastName' | translate">
-                </app-input>
-              </div>
-              <div class="col-6">
-                <app-input
-                  [control]="accountForm.controls.identityNumber"
-                  [placeholder]="'room.booking.guest.identityNumber' | translate">
-                </app-input>
-              </div>
-              <div class="col-6">
-                <app-input
-                  [control]="accountForm.controls.email"
-                  [placeholder]="'room.booking.guest.email' | translate">
-                </app-input>
-              </div>
+      <mat-card>
+        <mat-card-header>
+          <h2>{{'room.booking.guest.data' | translate}}</h2>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+          <div class="row p-0">
+            <div class="col-6">
+              <app-input
+                [control]="accountForm.controls.firstName"
+                [placeholder]="'room.booking.guest.firstName' | translate">
+              </app-input>
             </div>
-          </mat-card-content>
-        </mat-card>
-      </div>
+            <div class="col-6">
+              <app-input
+                [control]="accountForm.controls.lastName"
+                [placeholder]="'room.booking.guest.lastName' | translate">
+              </app-input>
+            </div>
+            <div class="col-6">
+              <app-input
+                [control]="accountForm.controls.identityNumber"
+                [placeholder]="'room.booking.guest.identityNumber' | translate">
+              </app-input>
+            </div>
+            <div class="col-6">
+              <app-input
+                [control]="accountForm.controls.email"
+                [placeholder]="'room.booking.guest.email' | translate">
+              </app-input>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
       <br>
+
+      <mat-card>
+        <mat-card-header>
+          <h2>{{'room.booking.payment.title' | translate}}</h2>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+          <div class="row p-0">
+            <mat-radio-group color="primary">
+              <div class="d-flex flex-column">
+                <div class="d-flex flex-row">
+                  <mat-radio-button class="w-100 radio-input" value="1" [checked]="true">{{'room.booking.payment.card' | translate}}</mat-radio-button>
+                  <mat-radio-button class="w-100 radio-input" value="2">{{'room.booking.payment.paypal' | translate}}</mat-radio-button>
+                </div>
+                <div class="d-flex flex-row">
+                  <mat-radio-button class="w-100 radio-input" value="3">{{'room.booking.payment.bill' | translate}}</mat-radio-button>
+                  <mat-radio-button class="w-100 radio-input" value="4">{{'room.booking.payment.appPay' | translate}}</mat-radio-button>
+                </div>
+              </div>
+            </mat-radio-group>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </div>
     <div class="col-6">
       <mat-card class="section">

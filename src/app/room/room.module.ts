@@ -13,6 +13,7 @@ import {RoomBookingComponent} from "./room-booking/room-booking.component";
 import {UserRouteAccessService} from "../core/auth/user-route-access.service";
 import {Authority} from "../core/auth/authority.constant";
 import {RoomBookingCompletedComponent} from "./room-booking/room-booking-completed/room-booking-completed.component";
+import {MatRadioModule} from "@angular/material/radio";
 
 const routes: Routes = [
   {
@@ -57,6 +58,7 @@ const routes: Routes = [
     MatCardModule,
     TranslateModule,
     MatCheckboxModule,
+    MatRadioModule,
   ]
 })
 export class RoomModule {

@@ -1,5 +1,9 @@
 <mat-form-field class="w-100">
-  <mat-date-range-input [formGroup]="form" [rangePicker]="picker">
+  <mat-date-range-input
+    [min]="minDate"
+    [max]="maxDate"
+    [formGroup]="form"
+    [rangePicker]="picker">
     <input
       matStartDate
       [formControlName]="startControlName"

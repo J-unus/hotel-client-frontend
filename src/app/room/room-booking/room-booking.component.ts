@@ -43,10 +43,10 @@ export class RoomBookingComponent implements OnInit {
       nonNullable: true,
       validators: [
         Validators.required,
+        Validators.email
       ],
     }),
   });
-
 
   constructor(private roomService: RoomService,
               private bookingService: BookingService,
@@ -68,17 +68,16 @@ export class RoomBookingComponent implements OnInit {
       this.endDate = moment(queryParams['endDate']);
     });
     this.accountService.identity(true).subscribe((account) => {
-      this.accountForm.controls.firstName.setValue(<string>account?.firstName);
-      this.accountForm.controls.lastName.setValue(<string>account?.lastName);
-      this.accountForm.controls.identityNumber.setValue(<string>account?.identityNumber);
-      this.accountForm.controls.email.setValue(<string>account?.email);
+      if (account) this.accountForm.patchValue(account)
     })
   }
 
   book(): void {
-    this.bookingService.book(this.room.id, {startDate: this.startDate, endDate: this.endDate}).subscribe(() => {
-      this.router.navigate(['completed'], {
-        relativeTo: this.activatedRoute,
+    this.accountService.save(this.accountForm.getRawValue()).subscribe(() => {
+      this.bookingService.book(this.room.id, {startDate: this.startDate, endDate: this.endDate}).subscribe(() => {
+        this.router.navigate(['completed'], {
+          relativeTo: this.activatedRoute,
+        });
       });
     });
   }

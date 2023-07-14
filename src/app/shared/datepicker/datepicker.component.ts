@@ -26,6 +26,8 @@ export class DatepickerComponent {
   @Input() endControlName: string;
   @Input() startPlaceholder: string;
   @Input() endPlaceholder: string;
+  @Input() minDate: Date;
+  @Input() maxDate: Date;
   datePickerHeader = DatePickerHeader;
 
   onDateChange(): void {

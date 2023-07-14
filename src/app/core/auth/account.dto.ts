@@ -3,8 +3,8 @@ export class AccountDto {
     public activated: boolean,
     public authorities: string[],
     public email: string,
-    public firstName: string | null,
-    public lastName: string | null,
+    public firstName: string,
+    public lastName: string,
     public identityNumber: string,
   ) {}
 }

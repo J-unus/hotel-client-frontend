@@ -40,6 +40,13 @@
         "identityNumber": "Isikukood",
         "email": "Email"
       },
+      "payment": {
+        "title": "Maksmine",
+        "card": "Pangakaart",
+        "bill": "Arve",
+        "paypal": "PayPal",
+        "appPay": "Apple Pay/Google Pay"
+      },
       "oneNightPrice": "Ühe öö hind",
       "totalPrice": "Hind kokku",
       "success": "Teie broneering on edukalt kinnitatud!"

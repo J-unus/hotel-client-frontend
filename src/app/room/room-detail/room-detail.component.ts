@@ -7,6 +7,7 @@ import {BookingService} from "../service/booking.service";
 import {getDaysDiff} from "../../core/util/date-util";
 import * as moment from "moment";
 import {Moment} from "moment";
+import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
 
 @Component({
   selector: 'app-room-detail',
@@ -44,8 +45,8 @@ export class RoomDetailComponent implements OnInit {
   toBooking(): void {
     this.router.navigate([`room/${this.room.id}/booking`], {
       queryParams: {
-        startDate: this.startDate,
-        endDate: this.endDate,
+        startDate: this.startDate.format(BACKEND_DATE_FORMAT),
+        endDate: this.endDate.format(BACKEND_DATE_FORMAT),
       }
     });
   }

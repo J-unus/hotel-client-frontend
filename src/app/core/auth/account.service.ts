@@ -23,7 +23,7 @@ export class AccountService {
               private http: HttpClient) {
   }
 
-  save(account: AccountDto): Observable<{}> {
+  save(account: any): Observable<{}> {
     return this.http.post(this.RESOURCE_URL + '/account', account);
   }
 
