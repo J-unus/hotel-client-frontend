@@ -1,0 +1,27 @@
+<app-back-button></app-back-button>
+<br>
+<h2>{{'admin.bookings' | translate}}</h2>
+<br>
+
+<mat-tab-group *ngIf="hasAnyFutureBookings || hasAnyPastBookings; else noBookings" mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms" color="primary-A500">
+  <mat-tab *ngIf="hasAnyFutureBookings" [label]="'admin.upcomingBookings' | translate">
+    <ng-container
+      *ngFor="let booking of bookings.futureBookings">
+      <app-admin-booking-card
+        (cancelEvent)="handleCancel()"
+        [booking]="booking"
+        [canCancel]="true">
+      </app-admin-booking-card>
+      <br>
+    </ng-container>
+  </mat-tab>
+
+  <mat-tab *ngIf="hasAnyPastBookings" [label]="'admin.previousBookings' | translate">
+    <app-admin-booking-card *ngFor="let booking of bookings.pastBookings" [booking]="booking"></app-admin-booking-card>
+  </mat-tab>
+</mat-tab-group>
+
+
+<ng-template #noBookings>
+  <h5>{{'admin.noBookings' | translate}}</h5>
+</ng-template>

@@ -1,1 +1,25 @@
-admin
+<h4>{{'admin.rooms' | translate}}</h4>
+<br>
+<table>
+  <tr>
+    <th><p>{{'admin.type' | translate}}</p></th>
+    <th><p>{{'admin.roomNumber' | translate}}</p></th>
+    <th><p>{{'admin.roomAmount' | translate}}</p></th>
+    <th><p>{{'admin.oneNightPrice' | translate}}</p></th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let room of rooms">
+    <td>{{room.type | classifier: roomTypeClassifier}}</td>
+    <td>{{room.roomNumber}}</td>
+    <td>{{room.roomAmount}}</td>
+    <td>{{room.oneNightPriceInCents / 100 | currency:room.currency: 'symbol-narrow': '0.0'}}</td>
+    <td>
+      <button
+        (click)="openRoomBookings(room)"
+        class="c-btn c-btn--text d-flex align-items-center column-gap-1 p-0 text-decoration-none">
+        <mat-icon class="button-icon" aria-hidden="false" color="primary">remove_red_eye</mat-icon>
+        {{'button.look' | translate}}
+      </button>
+    </td>
+  </tr>
+</table>

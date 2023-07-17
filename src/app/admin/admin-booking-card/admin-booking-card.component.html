@@ -1,0 +1,44 @@
+<mat-card>
+  <div class="row p-2">
+    <div class="col-2">
+      <div class="image-container">
+        <img mat-card-image
+             src="assets/sample/hotel_1.jpg"
+             [alt]="'room.details.picAlt' | translate"
+             class="zoom-image">
+      </div>
+    </div>
+    <div class="col-3 align-self-center">
+      <h5>{{booking.booker.firstName + ' ' + booking.booker.lastName}}</h5>
+      <p class="small-text">{{'admin.contact' | translate}}: {{booking.booker.email}}</p>
+    </div>
+    <div class="col-3 align-self-center">
+      <p class="small-text">
+        {{booking.room.type | classifier: roomTypeClassifier}}
+        {{'room.details.roomAmount' | translate:{number: booking.room.roomAmount} }}
+        ({{'admin.roomNr' | translate:{number: booking.room.roomNumber} }})
+      </p>
+      <p class="small-text">
+        {{booking.startAt | dateFormat}} - {{booking.endAt | dateFormat}}
+        ({{'room.details.nights' | translate:{number: nightsOfStay} }})
+      </p>
+    </div>
+    <div class="col-2 align-self-center">
+      <span class="large-text-bold">
+        {{'room.details.total' | translate}}: {{getCalculatedPrice() | currency:booking.room.currency: 'symbol-narrow': '0.0'}}
+      </span>
+    </div>
+    <div class="col-2 align-self-center">
+      <button *ngIf="canCancel; else chip"
+        (click)="cancel()"
+        class="c-btn c-btn--primary text-center cancel-button">
+        {{'button.cancel' | translate}}
+      </button>
+      <ng-template #chip>
+        <div *ngIf="booking.canceled" class="d-flex flex-wrap gap-3">
+          <app-chip color="jasper">{{'booking.canceled' | translate}}</app-chip>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</mat-card>
