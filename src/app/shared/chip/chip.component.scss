@@ -1,0 +1,16 @@
+.chip-container {
+  padding: 2px 16px !important;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 14px;
+
+  &--sapphire {
+    border: 2px solid var(--color-sapphire-blue-10);
+    color: var(--color-sapphire-blue-10);
+  }
+
+  &--jasper {
+    border: 2px solid var(--color-jasper-10);
+    color: var(--color-jasper-10);
+  }
+}
