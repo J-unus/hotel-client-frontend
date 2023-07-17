@@ -81,7 +81,8 @@
           <div class="col p-2">
             <div class="row">
               <div class="col-9">
-                <h5>{{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h5>
+                <h5>{{room.type | classifier: roomTypeClassifier}}
+                  {{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h5>
               </div>
               <div class="col text-end">
                 {{'room.details.size' | translate:{number: room.size} }}

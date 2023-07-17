@@ -1,4 +1,10 @@
-<h2>{{'room.book' | translate}}</h2>
+<div class="d-flex align-items-center justify-content-between pe-4">
+  <h2>{{'room.book' | translate}}</h2>
+  <select [(ngModel)]="sort" class="select-container">
+    <option value="asc"><p class="small-text">{{'room.filterCheaper' | translate}}</p></option>
+    <option value="desc"><p class="small-text">{{'room.filterExpensive' | translate}}</p></option>
+  </select>
+</div>
 <br>
 
 <div class="d-flex align-items-start">

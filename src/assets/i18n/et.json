@@ -15,13 +15,17 @@
     "book": "Broneeri",
     "continue": "Jätka",
     "backHome": "Tagasi kodulehele",
-    "cancel": "Tühista"
+    "cancel": "Tühista",
+    "goBack": "Mine tagasi",
+    "look": "Vaata"
   },
   "room": {
     "book": "Broneeri tuba meie hotellis",
     "noResults": "Tubasid ei leitud antud tingimustega",
     "roomAmount": "Toa suurus",
     "priceRange": "Hinnavahemik",
+    "filterCheaper": "Odavamad enne",
+    "filterExpensive": "Kallimad enne",
     "date": {
       "start": "Saabumise kuupäev",
       "end": "Lahkumise kuupäev"
@@ -60,40 +64,57 @@
   "booking": {
     "title": "Minu broneeringud",
     "futureBookings": "Tulevased broneeringud",
-    "pastBookings": "Eelmised broneeringud"
+    "pastBookings": "Eelmised broneeringud",
+    "canceled": "Tühistatud"
   },
   "sidebar": {
     "home": "Avaleht",
     "bookings": "Broneeringud",
-    "account": "Konto",
     "rooms": "Toad"
   },
-  "notification": "Teade",
+  "notification": {
+    "title": "Teade",
+    "cancel": "Tühistamine",
+    "cancelConfirm": "Kas olete kindel, et soovite broneeringut tühistada?\nTühistamisotsust ei saa hiljem muuta."
+  },
   "serverMessage": {
     "error": {
       "generic": "Midagi läks valesti",
       "booking": {
-        "datesRequired": "Sisesta viibimise algus- ja lõppkuupäevad",
-        "minDate": "Alguskuupäev ei tohi olla minevikus",
-        "maxDate": "Üle aasta ette broneerida ei ole võimalik",
-        "atLeastOneDayLong": "Broneering peab olema vähemalt ühe öö pikkune",
-        "alreadyBooked": "Tuba on antud kuupäevadel juba broneeritud"
+        "datesRequired": "Sisesta viibimise algus- ja lõppkuupäevad.",
+        "minDate": "Alguskuupäev ei tohi olla minevikus.",
+        "maxDate": "Üle aasta ette broneerida ei ole võimalik.",
+        "atLeastOneDayLong": "Broneering peab olema vähemalt ühe öö pikkune.",
+        "alreadyBooked": "Tuba on antud kuupäevadel juba broneeritud.",
+        "cancelDeadline": "Broneeringu tühistamise tähtaeg on juba möödas (3 päeva enne broneeringut)."
       }
     }
   },
+  "errorMessage": {
+    "guestData": "Palun täida kõik külalise andmed korrektselt.",
+    "acceptTerms": "Broneerimiseks peab nõustuma reeglite ja tingimustega."
+  },
   "loremIpsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum, ipsum ut ullamcorper placerat, ante nulla porttitor nulla, suscipit vestibulum est ex sed dui. Sed suscipit mattis quam, vitae hendrerit nisl ornare et. Duis tempor laoreet ornare. Donec molestie consequat pharetra. Curabitur malesuada vulputate purus. Nullam ullamcorper mattis elit, quis tempus ipsum hendrerit ac. Cras ullamcorper dui at facilisis imperdiet. Curabitur dictum, leo id pharetra porttitor, elit massa pellentesque quam, sit amet fermentum libero velit eget diam. Ut malesuada, eros a mattis dictum, diam nunc mattis mauris, vel imperdiet mi lorem eu sem.",
   "admin": {
-    "bookings": "Broneeringud",
+    "bookings": "Toa broneeringud",
     "upcomingBookings": "Tulevased broneeringud",
     "previousBookings": "Eelmised broneeringud",
     "rooms": "Hotellitoad",
-    "onePersonRoom": "1-kohalised toad",
-    "twoPersonRoom": "2-kohalised toad",
-    "threePersonRoom": "3-kohalised toad",
-    "room": "Tuba",
-    "dates": "Kuupäevad",
-    "guestName": "Külalise nimi",
-    "guestNr": "Külalise kontaktnumber",
-    "price": "Hind kokku"
+    "type": "Tüüp",
+    "roomNumber": "Toa number",
+    "roomAmount": "Voodikohtade arv",
+    "oneNightPrice": "Ühe öö hind",
+    "noBookings": "Toal puuduvad broneeringud",
+    "contact": "Kontakt",
+    "roomNr": "nr. {{number}}"
+  },
+  "errorPage": {
+    "title": "Vealeht",
+    "error": {
+      "http": {
+        "403": "Teil puuduvad õigused selle lehe nägemiseks.",
+        "404": "Lehte ei ole olemas."
+      }
+    }
   }
 }

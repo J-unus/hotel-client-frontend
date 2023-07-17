@@ -14,8 +14,16 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadData();
+  }
+
+  private loadData(): void {
     this.bookingService.getPastAndFutureBookings().subscribe(result => {
       this.bookings = result;
     });
+  }
+
+  handleCancel() {
+    this.loadData();
   }
 }

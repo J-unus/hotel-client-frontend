@@ -1,21 +1,22 @@
 <mat-card>
   <div class="image-container">
     <img mat-card-image
-         src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+         src="assets/sample/hotel_1.jpg"
          [alt]="'room.details.picAlt' | translate"
          class="zoom-image">
   </div>
   <br>
   <mat-card-content class="d-grid row-gap-3">
     <div>
-      <h5>{{'room.details.roomAmount' | translate:{ number: room.roomAmount } }}</h5>
+      <h5 class="d-flex flex-wrap gap-1">{{room.type | classifier: roomTypeClassifier}}
+        {{'room.details.roomAmount' | translate:{ number: room.roomAmount } }}
+      </h5>
       <span class="small-text">{{'room.details.size' | translate:{ number: room.size } }}</span>
     </div>
     <div class="min-height-65">
       <div class="d-flex flex-wrap gap-1">
-        <div *ngFor="let facility of room.roomFacilities"
-             class="card-chip">
-          <span class="small-text-bold">{{facility | classifier: facilityClassifier}}</span>
+        <div *ngFor="let facility of room.roomFacilities">
+          <app-chip >{{facility | classifier: facilityClassifier}}</app-chip>
         </div>
       </div>
     </div>

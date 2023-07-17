@@ -2,7 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {RoomService} from "../service/room.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {RoomDto} from "../dto/room.dto";
-import {facility} from "../../core/classifier/classifier";
+import {facility, roomType} from "../../core/classifier/classifier";
 import {BookingService} from "../service/booking.service";
 import {getDaysDiff} from "../../core/util/date-util";
 import * as moment from "moment";
@@ -15,7 +15,8 @@ import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
   styleUrls: ['./room-detail.component.scss'],
 })
 export class RoomDetailComponent implements OnInit {
-  facilityClassifier = facility;
+  readonly facilityClassifier = facility;
+  readonly roomTypeClassifier = roomType;
 
   startDate: Moment;
   endDate: Moment;

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from "@angular/core";
 import {RoomDto} from "../../dto/room.dto";
-import {facility} from "../../../core/classifier/classifier";
+import {facility, roomType} from "../../../core/classifier/classifier";
 import {getDaysDiff} from "../../../core/util/date-util";
 import {BACKEND_DATE_FORMAT, DISPLAY_DATE_FORMAT} from "../../../core/util/constant";
 import {TranslateService} from "@ngx-translate/core";
@@ -16,7 +16,8 @@ export class RoomCardComponent implements OnInit {
   @Input() room: RoomDto;
   @Input() booking: BookingDateDto;
 
-  facilityClassifier = facility;
+  readonly facilityClassifier = facility;
+  readonly roomTypeClassifier = roomType;
   private nightsOfStay: number;
 
   constructor(private translateService: TranslateService,

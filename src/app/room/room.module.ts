@@ -12,8 +12,9 @@ import {FormsModule} from "@angular/forms";
 import {RoomBookingComponent} from "./room-booking/room-booking.component";
 import {UserRouteAccessService} from "../core/auth/user-route-access.service";
 import {Authority} from "../core/auth/authority.constant";
-import {RoomBookingCompletedComponent} from "./room-booking/room-booking-completed/room-booking-completed.component";
+import {RoomBookingCompletedComponent} from "./room-booking-completed/room-booking-completed.component";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatIconModule} from "@angular/material/icon";
 
 const routes: Routes = [
   {
@@ -27,7 +28,7 @@ const routes: Routes = [
   {
     path: ':roomId/booking',
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.ADMIN],
     },
     canActivate: [UserRouteAccessService],
     component: RoomBookingComponent,
@@ -35,7 +36,7 @@ const routes: Routes = [
   {
     path: ':roomId/booking/completed',
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.ADMIN],
     },
     canActivate: [UserRouteAccessService],
     component: RoomBookingCompletedComponent,
@@ -59,6 +60,7 @@ const routes: Routes = [
     TranslateModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatIconModule,
   ]
 })
 export class RoomModule {

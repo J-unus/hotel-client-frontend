@@ -9,6 +9,8 @@ import * as moment from "moment";
 import {Moment} from "moment";
 import {getDaysDiff} from "../../core/util/date-util";
 import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
+import {NotificationService} from "../../core/service/notification.service";
+import {roomType} from "../../core/classifier/classifier";
 
 @Component({
   selector: 'app-room-booking',
@@ -16,6 +18,7 @@ import {BACKEND_DATE_FORMAT} from "../../core/util/constant";
   styleUrls: ['./room-booking.component.scss'],
 })
 export class RoomBookingComponent implements OnInit {
+  readonly roomTypeClassifier = roomType;
   startDate: Moment;
   endDate: Moment;
   room: RoomDto;
@@ -53,6 +56,7 @@ export class RoomBookingComponent implements OnInit {
               private bookingService: BookingService,
               private accountService: AccountService,
               private router: Router,
+              private notificationService: NotificationService,
               private activatedRoute: ActivatedRoute) {
   }
 
@@ -74,6 +78,14 @@ export class RoomBookingComponent implements OnInit {
   }
 
   book(): void {
+    if (!this.accountForm.valid) {
+      this.notificationService.translateAndAlertError('errorMessage.guestData');
+      return;
+    }
+    if (!this.acceptTerms) {
+      this.notificationService.translateAndAlertError('errorMessage.acceptTerms');
+      return;
+    }
     this.accountService.save(this.accountForm.getRawValue()).subscribe(() => {
       this.bookingService.book(this.room.id, {
         startDate: this.startDate.format(BACKEND_DATE_FORMAT),

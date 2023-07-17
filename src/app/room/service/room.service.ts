@@ -20,4 +20,8 @@ export class RoomService {
   getById(id: number): Observable<RoomDto> {
     return this.http.get<RoomDto>(this.RESOURCE_URL + '/rooms/' + id);
   }
+
+  findAll(): Observable<RoomDto[]> {
+    return this.http.get<RoomDto[]>(this.RESOURCE_URL + '/rooms/all');
+  }
 }

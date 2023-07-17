@@ -1,5 +1,12 @@
 .header {
   background-color: white;
   height: 100px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 101%;
+  border-bottom: 2px solid var(--color-black-coral-2);
+}
+
+div .name {
+  color: var(--color-sapphire-blue-10);
+  border-right: 1px solid var(--color-black-coral-1);
+  padding-right: 1.5rem;
 }

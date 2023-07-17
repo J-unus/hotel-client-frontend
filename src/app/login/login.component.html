@@ -1,28 +1,31 @@
-<div class="col-6 pt-5 m-auto">
+<div class="login-container">
   <mat-card class="p-3">
-    <mat-card-header>
-      <h2>{{'login.title' | translate}}</h2>
-    </mat-card-header>
-    <mat-card-content>
-      <app-input
-        type="email"
-        [control]="loginForm.controls.username"
-        [placeholder]="'login.email' | translate">
-      </app-input>
-      <app-input
-        type="password"
-        [control]="loginForm.controls.password"
-        [placeholder]="'login.password' | translate">
-      </app-input>
+    <div class="width-600">
+      <mat-card-header>
+        <h2>{{'login.title' | translate}}</h2>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+        <app-input
+          type="email"
+          [control]="loginForm.controls.username"
+          [placeholder]="'login.email' | translate">
+        </app-input>
+        <app-input
+          type="password"
+          [control]="loginForm.controls.password"
+          [placeholder]="'login.password' | translate">
+        </app-input>
 
-    </mat-card-content>
+      </mat-card-content>
 
-    <mat-card-actions class="justify-content-center pb-3">
-      <button
-        (click)="login()"
-        class="c-btn c-btn--primary text-center">
-        {{'button.continue' | translate}}
-      </button>
-    </mat-card-actions>
+      <mat-card-actions class="justify-content-center pb-3">
+        <button
+          (click)="login()"
+          class="c-btn c-btn--primary text-center">
+          {{'button.continue' | translate}}
+        </button>
+      </mat-card-actions>
+    </div>
   </mat-card>
 </div>

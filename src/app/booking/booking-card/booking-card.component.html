@@ -4,13 +4,16 @@
     <div class="col-2">
       <div class="image-container">
         <img mat-card-image
-             src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+             src="assets/sample/hotel_1.jpg"
              [alt]="'room.details.picAlt' | translate"
              class="zoom-image">
       </div>
     </div>
     <div class="col-5 align-self-center">
-      <h5 class="color-secondary">{{'room.details.roomAmount' | translate:{number: booking.room.roomAmount} }}</h5>
+      <div class="d-flex flex-wrap gap-3">
+        <h5 class="color-secondary">{{'room.details.roomAmount' | translate:{number: booking.room.roomAmount} }}</h5>
+        <app-chip *ngIf="booking.canceled" color="jasper">{{'booking.canceled' | translate}}</app-chip>
+      </div>
       <p class="small-text pt-2">{{'room.details.nights' | translate:{number: nightsOfStay} }}</p>
     </div>
     <div class="col-5 align-self-center text-end pe-5">
@@ -19,7 +22,7 @@
       </span>
     </div>
   </div>
-  <mat-card-actions class="justify-content-center pt-0">
+  <mat-card-actions *ngIf="canCancel" class="justify-content-center pt-0">
     <button
       (click)="cancel()"
       class="c-btn c-btn--secondary text-center">

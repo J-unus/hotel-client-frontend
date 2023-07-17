@@ -1,5 +1,8 @@
-<div class="c-snackbar c-snackbar--error color-black">
-  <h1>{{'notification' | translate}}</h1>
-  <img class="close" src="assets/Icons/close.png" alt="sulge">
+<div class="c-snackbar c-snackbar--error color-black pe-1">
+  <h1>
+    <span><mat-icon class="button-icon" aria-hidden="false">error_outline</mat-icon></span>
+    {{'notification.title' | translate}}
+  </h1>
+  <mat-icon aria-hidden="false" class="text-end">close</mat-icon>
   <p>{{data.message}}</p>
 </div>

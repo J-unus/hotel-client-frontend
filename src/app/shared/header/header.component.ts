@@ -23,6 +23,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.accountService.identity().subscribe((account) => {
+      this.account = account;
+    });
     this.accountService
       .getAuthenticationState()
       .pipe(takeUntil(this.destroy$))

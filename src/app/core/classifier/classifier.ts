@@ -9,6 +9,12 @@ export const roomAmount: Classifier[] = [
   {value: 3, label: '3-kohaline'},
 ];
 
+export const roomType: Classifier[] = [
+  {value: 'SINGLE', label: 'Single'},
+  {value: 'DOUBLE', label: 'Double'},
+  {value: 'SUITE', label: 'Suite'},
+];
+
 export const priceRange: Classifier[] = [
   {value: '0_100', label: '€ 0-100'},
   {value: '100_200', label: '€ 100-200'},

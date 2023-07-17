@@ -22,3 +22,7 @@
   color: black !important;
   box-shadow: none !important;
 }
+
+::ng-deep .mat-mdc-tab {
+  background-color: white !important;
+}

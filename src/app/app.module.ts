@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {UiModule} from '@egov/cvi-ng';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SharedModule} from "./shared/shared.module";
@@ -16,6 +15,7 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {httpInterceptorProviders} from "./core/interceptor";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatIconRegistry} from "@angular/material/icon";
 
 const ESTONIAN_DATE_FORMATS = {
   parse: {
@@ -40,7 +40,6 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    UiModule,
     HttpClientModule,
     SharedModule,
     CommonModule,
@@ -61,10 +60,13 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'et'},
     {provide: MAT_DATE_FORMATS, useValue: ESTONIAN_DATE_FORMATS},
-    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
+    {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3500}},
     httpInterceptorProviders,
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  constructor(iconRegistry: MatIconRegistry) {
+    iconRegistry.setDefaultFontSetClass('material-icons-outlined');
+  }
 }

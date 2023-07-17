@@ -1,3 +1,4 @@
+<div class="sidebar-ending">
 <div class="w-25 c-sidenav c-sidenav--small">
   <div class="w-25 wrapper">
     <nav id="sidebar" class="w-25 sidebar-controller">
@@ -7,53 +8,30 @@
             (click)="navigate('room')"
             data-toggle="collapse"
             aria-expanded="false">
-            <img
-              src="assets/Icons/home.png"
-              alt="Avalehe ikoon"
-            />
+            <mat-icon aria-hidden="false">home</mat-icon>
             <p>{{'sidebar.home' | translate}}</p>
           </a>
         </li>
-        <li>
+        <li *ngIf="hasAnyAuthority(['ROLE_USER'])">
           <a
             (click)="navigate('booking')"
             data-toggle="collapse"
             aria-expanded="false">
-            <img
-              src="assets/Icons/specialReq.png"
-              alt="Broneeringute ikoon"
-            />
+            <mat-icon aria-hidden="false">insert_drive_file</mat-icon>
             <p>{{'sidebar.bookings' | translate}}</p>
           </a>
         </li>
         <li>
-        <li>
+        <li *ngIf="hasAnyAuthority(['ROLE_ADMIN'])">
           <a
             (click)="navigate('admin')"
             data-toggle="collapse"
             aria-expanded="false">
-            <img
-              src="assets/Icons/country.png"
-              alt="Tubade ikoon"
-            />
+            <mat-icon aria-hidden="false">meeting_room</mat-icon>
             <p>{{'sidebar.rooms' | translate}}</p>
-          </a>
-        </li>
-        <li>
-          <a
-            (click)="navigate('account')"
-            data-toggle="collapse"
-            aria-expanded="false">
-            <img
-              src="assets/Icons/myData.png"
-              alt="Konto ikoon"
-            />
-            <p>{{'sidebar.account' | translate}}</p>
           </a>
         </li>
       </ul>
     </nav>
   </div>
-</div>
-
-<div class="sidebar-ending"></div>
+</div></div>

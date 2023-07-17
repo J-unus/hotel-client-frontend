@@ -1,6 +1,7 @@
 <app-back-button></app-back-button>
 <ng-container *ngIf="room">
-  <h2>{{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h2>
+  <h2>{{room.type | classifier: roomTypeClassifier}}
+    {{'room.details.roomAmount' | translate:{number: room.roomAmount} }}</h2>
   <h6>{{'room.details.size' | translate:{number: room.size} }}</h6>
   <br>
 
@@ -8,17 +9,17 @@
     <div class="col">
       <div class="image-container">
         <img
-          src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+          src="assets/sample/hotel_1.jpg"
           [alt]="'room.details.picAlt' | translate"
           class="zoom-image">
       </div>
     </div>
     <div class="col">
       <div class="row row-gap-3">
-        <div *ngFor="let _ of [].constructor(4)" class="col-6">
+        <div *ngFor="let number of [2,3,4,5]" class="col-6">
           <div class="image-container--small">
             <img
-              src="https://img1.10bestmedia.com/Images/Photos/378649/Park-Hyatt-New-York-Manhattan-Sky-Suite-Master-Bedroom-low-res_55_660x440.jpg"
+              [src]="'assets/sample/hotel_' + number + '.jpg'"
               [alt]="'room.details.picAlt' | translate"
               class="zoom-image">
           </div>
@@ -46,7 +47,7 @@
           </mat-card-header>
           <br>
           <mat-card-content>
-            <p>{{room.description}}</p>
+            <p>{{'loremIpsum' | translate}}</p>
           </mat-card-content>
         </mat-card>
       </div>

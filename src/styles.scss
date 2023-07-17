@@ -14,6 +14,7 @@
 // hue. Available color palettes: https://material.io/design/color/
 $client-frontend-primary: mat.define-palette($md-ee-primary);
 $client-frontend-accent: mat.define-palette($md-ee-accent);
+$client-frontend-accent: mat.define-palette($md-ee-accent);
 
 // The warn palette is optional (defaults to red).
 $client-frontend-warn: mat.define-palette(mat.$red-palette);
@@ -37,7 +38,6 @@ $client-frontend-theme: mat.define-light-theme((
 @import 'bootstrap/scss/bootstrap-grid.scss';
 @import 'veera-styles/scss/main-storybook.scss';
 
-html, body { height: 100%; }
 body {
   margin: 0;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -112,4 +112,18 @@ p {
 
 .color-secondary {
   color: var(--color-sapphire-blue-9);
+}
+
+.mat-mdc-tab-body-wrapper {
+  background-color: white !important;
+  padding: 1em;
+}
+
+.mat-mdc-tab-body-content {
+  overflow: hidden !important;
+}
+
+.cancel-button {
+  background-color: var(--color-jasper-10);
+  border-color: var(--color-jasper-10);
 }

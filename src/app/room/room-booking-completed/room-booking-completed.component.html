@@ -1,0 +1,21 @@
+<div class="completed-container">
+  <mat-card class="p-3">
+    <div class="width-600">
+      <mat-card-content>
+        <div class="d-flex justify-content-center color-success">
+          <mat-icon class="button-icon" aria-hidden="false">check_circle</mat-icon>
+          <h3 class="ps-3">{{'room.booking.success' | translate}}</h3>
+        </div>
+        <br>
+      </mat-card-content>
+
+      <mat-card-actions class="justify-content-center pb-3">
+        <button
+          (click)="navigate()"
+          class="c-btn c-btn--primary text-center">
+          {{'button.backHome' | translate}}
+        </button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
+</div>
