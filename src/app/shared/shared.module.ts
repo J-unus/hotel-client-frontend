@@ -18,6 +18,11 @@ import {InputComponent} from "./input/input.component";
 import {BackButtonComponent} from "./back-button/back-button.component";
 import {DateFormatPipe} from "./pipe/date-format.pipe";
 import {AlertMessageComponent} from "./alert-message/alert-message.component";
+import {CancelDialogComponent} from "./cancel-dialog/cancel-dialog.component";
+import {A11yModule} from "@angular/cdk/a11y";
+import {ChipComponent} from "./chip/chip.component";
+import {MatIconModule} from "@angular/material/icon";
+import {ErrorComponent} from "./error/error.component";
 
 @NgModule({
   declarations: [
@@ -30,6 +35,9 @@ import {AlertMessageComponent} from "./alert-message/alert-message.component";
     InputComponent,
     BackButtonComponent,
     AlertMessageComponent,
+    CancelDialogComponent,
+    ChipComponent,
+    ErrorComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -45,6 +53,8 @@ import {AlertMessageComponent} from "./alert-message/alert-message.component";
     TranslateModule,
     MatCardModule,
     MatDialogModule,
+    A11yModule,
+    MatIconModule,
   ],
   exports: [
     HeaderComponent,
@@ -56,6 +66,9 @@ import {AlertMessageComponent} from "./alert-message/alert-message.component";
     InputComponent,
     BackButtonComponent,
     AlertMessageComponent,
+    CancelDialogComponent,
+    ChipComponent,
+    ErrorComponent,
   ]
 })
 export class SharedModule {

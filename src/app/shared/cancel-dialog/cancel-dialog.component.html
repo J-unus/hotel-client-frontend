@@ -1,0 +1,29 @@
+<div class="p-4 dialog-container">
+  <div class="row">
+    <div class="col">
+      <h4>{{'notification.cancel' | translate}}</h4>
+
+    </div>
+    <div class="col text-end pt-1">
+      <mat-icon mat-dialog-close aria-hidden="false">close</mat-icon>
+    </div>
+  </div>
+
+  <br>
+  <p class="pre-wrap">{{'notification.cancelConfirm' | translate}}</p>
+  <br>
+
+  <div class="d-flex column-gap-2 justify-content-center">
+    <button
+      mat-dialog-close
+      class="c-btn c-btn--secondary text-center">
+      {{'button.goBack' | translate}}
+    </button>
+    <button
+      cdkTrapFocus
+      [mat-dialog-close]="true"
+      class="c-btn c-btn--primary text-center cancel-button">
+      {{'button.cancel' | translate}}
+    </button>
+  </div>
+</div>
