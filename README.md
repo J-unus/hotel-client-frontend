@@ -1,3 +1,17 @@
+### Local quick setup
+#### IntelliJ IDEA
+
+* Prerequisites - Nodejs and npm
+* Run command `npm i` to install dependencies
+* Run command `npm start` to run the app
+* Web content available at `http://localhost:9001/`
+* Backend available at hotel-app
+
+#### Test accounts
+* login: user@localhost pass: user
+* login: user2@localhost pass: user
+* login: admin@localhost pass: admin
+
 # ClientFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
