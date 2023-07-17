@@ -1,5 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {ErrorComponent} from "./shared/error/error.component";
+
+export const errorRoute: Routes = [
+  {
+    path: 'accessdenied',
+    component: ErrorComponent,
+    data: {
+      errorMessage: 'error.http.403',
+    },
+  },
+  {
+    path: '404',
+    component: ErrorComponent,
+    data: {
+      errorMessage: 'error.http.404',
+    },
+  },
+  {
+    path: '**',
+    redirectTo: '/404',
+  },
+];
 
 const routes: Routes = [
   {
@@ -23,6 +45,7 @@ const routes: Routes = [
     redirectTo: 'room',
     pathMatch: 'full',
   },
+  ...errorRoute,
 ];
 
 @NgModule({
