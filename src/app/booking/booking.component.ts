@@ -23,7 +23,7 @@ export class BookingComponent implements OnInit {
     });
   }
 
-  handleCancel() {
+  handleDataChange() {
     this.loadData();
   }
 }

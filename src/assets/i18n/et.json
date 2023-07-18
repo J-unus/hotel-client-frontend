@@ -17,7 +17,8 @@
     "backHome": "Tagasi kodulehele",
     "cancel": "Tühista",
     "goBack": "Mine tagasi",
-    "look": "Vaata"
+    "look": "Vaata",
+    "sendRate": "Saada tagaside"
   },
   "room": {
     "book": "Broneeri tuba meie hotellis",
@@ -75,7 +76,8 @@
   "notification": {
     "title": "Teade",
     "cancel": "Tühistamine",
-    "cancelConfirm": "Kas olete kindel, et soovite broneeringut tühistada?\nTühistamisotsust ei saa hiljem muuta."
+    "cancelConfirm": "Kas olete kindel, et soovite broneeringut tühistada?\nTühistamisotsust ei saa hiljem muuta.",
+    "rate": "Hinda oma kogemust"
   },
   "serverMessage": {
     "error": {
@@ -106,7 +108,9 @@
     "oneNightPrice": "Ühe öö hind",
     "noBookings": "Toal puuduvad broneeringud",
     "contact": "Kontakt",
-    "roomNr": "nr. {{number}}"
+    "roomNr": "nr. {{number}}",
+    "averageRating": "Keskmine hinne",
+    "averageRatingMissing": "Hinne puudub"
   },
   "errorPage": {
     "title": "Vealeht",

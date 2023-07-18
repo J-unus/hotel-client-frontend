@@ -8,6 +8,7 @@ export class BookingDto {
   public canceled: boolean;
   public startAt: string;
   public endAt: string;
+  public rating: number;
 }
 
 export class BookingWithBookerDto extends BookingDto {

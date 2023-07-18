@@ -1,0 +1,26 @@
+.close {
+  width: 14px;
+  height: auto;
+}
+
+.dialog-container {
+  width: 620px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 40px;
+  width: 10%;
+  height: 100%;
+  color: var(--color-sapphire-blue-10);
+}
+
+.star.filled {
+  color: var(--color-sapphire-blue-10);
+}

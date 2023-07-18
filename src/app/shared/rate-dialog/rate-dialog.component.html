@@ -1,0 +1,37 @@
+<div class="p-4 dialog-container">
+  <div class="row">
+    <div class="col">
+      <h4>{{'notification.rate' | translate}}</h4>
+
+    </div>
+    <div class="col text-end pt-1">
+      <mat-icon mat-dialog-close aria-hidden="false">close</mat-icon>
+    </div>
+  </div>
+
+  <br>
+  <span class="rating">
+      <mat-icon
+        *ngFor="let star of stars"
+        class="star"
+        [ngClass]="{ 'filled': star <= rating }"
+        (click)="setRating(star)">
+        {{ star <= rating ? 'star' : 'star_border' }}
+      </mat-icon>
+  </span>
+  <br>
+
+  <div class="d-flex column-gap-2 justify-content-center">
+    <button
+      mat-dialog-close
+      class="c-btn c-btn--secondary text-center">
+      {{'button.goBack' | translate}}
+    </button>
+    <button
+      cdkTrapFocus
+      [mat-dialog-close]="rating"
+      class="c-btn c-btn--primary text-center">
+      {{'button.sendRate' | translate}}
+    </button>
+  </div>
+</div>

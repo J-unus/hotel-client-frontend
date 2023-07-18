@@ -28,4 +28,8 @@ export class BookingService {
   getPastAndFutureBookingsByRoomId(roomId: number): Observable<BookingPastFutureWithBookerDto> {
     return this.http.get<BookingPastFutureWithBookerDto>(this.RESOURCE_URL + '/bookings/' + encodeURIComponent(roomId) + '/past-future');
   }
+
+  rate(id: number, rating: number): Observable<void> {
+    return this.http.post<void>(this.RESOURCE_URL + '/bookings/' + encodeURIComponent(id) + '/rate/' + rating, null);
+  }
 }

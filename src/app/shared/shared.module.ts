@@ -23,6 +23,7 @@ import {A11yModule} from "@angular/cdk/a11y";
 import {ChipComponent} from "./chip/chip.component";
 import {MatIconModule} from "@angular/material/icon";
 import {ErrorComponent} from "./error/error.component";
+import {RateDialogComponent} from "./rate-dialog/rate-dialog.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {ErrorComponent} from "./error/error.component";
     CancelDialogComponent,
     ChipComponent,
     ErrorComponent,
+    RateDialogComponent,
   ],
   imports: [
     MatFormFieldModule,
@@ -69,6 +71,7 @@ import {ErrorComponent} from "./error/error.component";
     CancelDialogComponent,
     ChipComponent,
     ErrorComponent,
+    RateDialogComponent,
   ]
 })
 export class SharedModule {

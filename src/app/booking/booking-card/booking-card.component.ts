@@ -4,6 +4,7 @@ import {BookingDto} from "../../room/dto/booking.dto";
 import {getDaysDiff} from "../../core/util/date-util";
 import {MatDialog} from "@angular/material/dialog";
 import {CancelDialogComponent} from "../../shared/cancel-dialog/cancel-dialog.component";
+import {RateDialogComponent} from "../../shared/rate-dialog/rate-dialog.component";
 
 @Component({
   selector: 'app-booking-card',
@@ -13,8 +14,9 @@ import {CancelDialogComponent} from "../../shared/cancel-dialog/cancel-dialog.co
 export class BookingCardComponent implements OnInit {
   @Input() booking: BookingDto;
   @Input() canCancel = false;
-  @Output() cancelEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Output() dataEvent: EventEmitter<void> = new EventEmitter<void>();
   nightsOfStay: number;
+  stars: number[] = [1, 2, 3, 4, 5];
 
   constructor(private bookingService: BookingService,
               private dialog: MatDialog) {
@@ -34,7 +36,19 @@ export class BookingCardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.bookingService.cancel(this.booking.id).subscribe(() => {
-          this.cancelEvent.emit();
+          this.dataEvent.emit();
+        });
+      }
+    })
+  }
+
+  rate(): void {
+    const dialogRef = this.dialog.open(RateDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.bookingService.rate(this.booking.id, result).subscribe(() => {
+          this.dataEvent.emit();
         });
       }
     })

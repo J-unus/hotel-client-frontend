@@ -7,4 +7,5 @@ export class RoomDto {
   public oneNightPriceInCents: number;
   public currency: string;
   public roomFacilities: string[];
+  public averageRating: number;
 }
